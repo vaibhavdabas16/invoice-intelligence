@@ -4,13 +4,21 @@ An LLM-based pipeline that reads a vendor document (clean PDF, scan or phone pho
 whether it is an invoice, and returns **validated** JSON. It also reports how well it works,
 where it fails and what it costs.
 
-> Es Magico AI internship assignment. The three questions the brief cares about, and where they
-> are answered:
-> - **How well does it work?** 80/80 fields correct on the 10 labelled documents, with honest
->   caveats → [reports/evaluation_report.md](reports/evaluation_report.md)
-> - **Why does it fail?** Measured on degraded copies of the labelled set → [reports/failure_analysis.md](reports/failure_analysis.md)
-> - **What does it cost?** ~$0.0005 per document on first-time documents → [reports/cost_analysis.md](reports/cost_analysis.md)
-> - **What was fixed after measuring?** Two fixes kept, one experiment removed, open issues listed → [reports/remediation_report.md](reports/remediation_report.md)
+## TL;DR for reviewers
+
+| rubric area | in one line | details |
+|---|---|---|
+| **Eval harness** | `python -m src.eval.run`: per-field accuracy (normalised and exact), line items matched row by row, invoice confusion matrix, per-document report with silent errors marked | [evaluation_report.md](reports/evaluation_report.md) |
+| **Extraction & validation** | OpenAI `gpt-6-luna` with a strict JSON schema; **80/80 fields** on the 10 labelled documents (4 fresh runs); totals, subtotal, tax-rate and row checks; every value of a digital PDF traced to its page and printed line | [evaluation_report.md §2](reports/evaluation_report.md) |
+| **Failure analysis** | the labelled set has 0 errors, so failures were studied on degraded copies: errors grouped by cause, what was fixed, what is still open (e.g. `Pomfret` → `Reefret` on blurred scans), ranked "fix first" list | [failure_analysis.md](reports/failure_analysis.md) |
+| **Bad-input handling** | non-invoices (purchase order, bank statement, cover letter) all correct; corrupt, empty, encrypted and unreadable files plus API timeouts handled without crashing the batch | [§7](#7-bad-input-handling) |
+| **Cost** | provider-reported tokens × published price: **$0.00045 per digital invoice, $0.00089 per scanned invoice**; whole project ≈ $0.28 | [cost_analysis.md](reports/cost_analysis.md) |
+| **Code & communication** | 205 offline tests, typed, linted; works from a fresh clone; every change made after looking at results is disclosed | [docs/architecture.md](docs/architecture.md) |
+| **Bonus** | `needs_review` flag measured against real errors (precision / recall per data set); web UI shows the actual validation steps and evidence | [§8](#8-human-review-flag-bonus) |
+
+**Honest caveats:** 10 documents is a small sample (10/10 correct is consistent with as little as
+69% per-document accuracy). About 1 wrong value per run still goes unflagged on degraded scans.
+The prompt was not tuned on the labelled documents.
 
 ### Reading guide (for reviewers, ~10 minutes)
 
