@@ -19,7 +19,9 @@ from typing import Any
 
 from src.config import Settings, get_settings
 from src.cost.report import write_cost_files
+from src.errors import ProviderError
 from src.extraction.providers import create_provider
+from src.extraction.providers.base import LLMProvider
 from src.ingestion.loader import discover_documents
 from src.pipeline import PipelineResult, process_path
 from src.runner import run_many
@@ -35,13 +37,23 @@ def _settings_from_args(args: argparse.Namespace) -> Settings:
     )
 
 
+def _provider_or_exit(settings: Settings, args: argparse.Namespace) -> LLMProvider | None:
+    try:
+        return create_provider(settings, use_cache=not args.no_cache)
+    except ProviderError as exc:
+        print(f"error [{exc.category.value}]: {exc.message}", file=sys.stderr)
+        return None
+
+
 def cmd_extract(args: argparse.Namespace) -> int:
     settings = _settings_from_args(args)
     path = Path(args.file)
     if not path.is_file():
         print(f"error: {path} is not a file", file=sys.stderr)
         return 2
-    provider = create_provider(settings, use_cache=not args.no_cache)
+    provider = _provider_or_exit(settings, args)
+    if provider is None:
+        return 2
     result = process_path(path, provider, settings)
     payload: dict[str, Any] = (
         {"result": result.output_json(), "metadata": result.metadata_json()} if args.full else result.output_json()
@@ -131,7 +143,9 @@ def cmd_batch(args: argparse.Namespace) -> int:
     todo = [(s, p) for s, p in subsets if args.force or not _is_reusable(meta_dir / f"{p.stem}.meta.json", settings)]
     print(f"{len(subsets)} documents, {len(subsets) - len(todo)} already done, {len(todo)} to process", file=sys.stderr)
 
-    provider = create_provider(settings, use_cache=not args.no_cache)
+    provider = _provider_or_exit(settings, args)
+    if provider is None:
+        return 2
 
     def save(result: PipelineResult) -> None:
         # Written per document as soon as it finishes: an interrupted batch resumes where it stopped.

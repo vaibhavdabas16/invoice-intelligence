@@ -24,6 +24,7 @@ from tabulate import tabulate
 
 from src.config import get_settings
 from src.cost.report import cost_row, write_cost_files
+from src.errors import ProviderError
 from src.eval.compare import FIELDS, compare_document
 from src.eval.metrics import (
     EvalRecord,
@@ -290,7 +291,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: no documents with ground truth found in {data_dir}", file=sys.stderr)
         return 2
 
-    provider = create_provider(settings, use_cache=not args.no_cache)
+    try:
+        provider = create_provider(settings, use_cache=not args.no_cache)
+    except ProviderError as exc:
+        print(f"error [{exc.category.value}]: {exc.message}", file=sys.stderr)
+        return 2
     results = run_many(docs, provider, settings, workers=args.workers)
 
     records: list[EvalRecord] = []

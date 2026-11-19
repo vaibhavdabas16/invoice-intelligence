@@ -119,14 +119,14 @@ python -m venv .venv
 # Windows (PowerShell): .venv\Scripts\Activate.ps1     macOS/Linux: source .venv/bin/activate
 pip install -r requirements-dev.txt
 cp .env.example .env                    # Windows: copy .env.example .env ; then set OPENAI_API_KEY
-pytest -q                               # verifies the install: 201 offline tests, no API key needed
+pytest                                  # verifies the install: 205 offline tests, no API key needed
 ```
 
 Troubleshooting:
 
 | symptom | fix |
 |---|---|
-| `Missing credentials` / `provider_auth` | `OPENAI_API_KEY` is not set in `.env` (the file must be in the repository root) |
+| `error [provider_auth]: OPENAI_API_KEY is not set` (CLI exit 2, API 503) | copy `.env.example` to `.env` in the repository root and put your key in it |
 | `error: data/labelled not found` | the sample pack is not in `data/` (see below) |
 | `provider_error ... insufficient_quota` | the OpenAI account has no credit; it is not retried on purpose |
 | PowerShell refuses to run `Activate.ps1` | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, or call `.venv\Scripts\python.exe` directly |
@@ -147,7 +147,7 @@ python extract.py data/labelled/L01.pdf > out.json   # one document -> required-
 python -m src.eval.run                              # evaluation on the 10 labelled docs
 python -m src.main batch                            # all 20 docs -> outputs/ (resumable)
 python -m src.main serve                            # web UI + API on http://127.0.0.1:8000
-pytest                                              # 201 tests, no network, no API spend
+pytest                                              # 205 tests, no network, no API spend
 ```
 
 A fresh clone has no response cache, so `python -m src.eval.run` makes real API calls
@@ -476,7 +476,7 @@ Secrets: `.env` is git-ignored and no key appears in the code. Requests are sent
 ## 13. Tests and quality checks
 
 ```bash
-pytest                         # 201 tests, ~7 s, fully offline (scripted fake provider)
+pytest                         # 205 tests, ~7 s, fully offline (scripted fake provider)
 ruff check . && ruff format --check .
 mypy                           # src/, strict-ish settings in pyproject.toml
 ```
@@ -516,7 +516,7 @@ src/
 extract.py                     python extract.py invoice.pdf
 scripts/                       stress sets, error injection, experiment summaries, review-signal analysis
 docs/architecture.md           components, sequence, data contracts, decision log
-tests/                         201 offline tests
+tests/                         205 offline tests
 outputs/                       <id>.json for all 20 documents, _meta/ (processing metadata), _manifest.json
 reports/                       evaluation_report.md, eval_per_document.md, failure_analysis.md,
                                cost_analysis.md, remediation_report.md, improvement_report.md,

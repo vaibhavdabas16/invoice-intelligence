@@ -23,6 +23,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 
 from src.config import Settings, get_settings
+from src.errors import ProviderError
 from src.extraction.providers import create_provider
 from src.extraction.providers.base import LLMProvider
 from src.pipeline import process_document
@@ -61,7 +62,11 @@ async def extract(file: UploadFile = File(...)) -> dict[str, Any]:
         raise HTTPException(status_code=413, detail=f"file exceeds {settings.max_file_mb} MB")
     name = file.filename or "upload"
     # The pipeline is synchronous (SDK call + image processing); keep the event loop free.
-    result = await asyncio.to_thread(process_document, data, name, app_provider(), settings)
+    try:
+        provider = app_provider()
+    except ProviderError as exc:
+        raise HTTPException(status_code=503, detail=exc.message) from exc
+    result = await asyncio.to_thread(process_document, data, name, provider, settings)
     return {"result": result.output_json(), "metadata": result.metadata_json()}
 
 
