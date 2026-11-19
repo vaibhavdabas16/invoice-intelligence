@@ -1,0 +1,71 @@
+DATASET: EXPLORATION SET stress_mild_b (derived/synthetic; not the evaluation set, no generalisation claims)
+
+FIELD-LEVEL ACCURACY (normalised match; see README 'Matching rules')
+FIELD           ACCURACY      CORRECT    TOTAL    EXACT(raw)
+--------------  ----------  ---------  -------  ------------
+is_invoice      100.0%             10       10            10
+vendor          100.0%             10       10             7
+invoice_number  70.0%               7       10             7
+invoice_date    60.0%               6       10             6
+currency        100.0%             10       10            10
+line_items      40.0%               4       10             4
+tax_total       70.0%               7       10             7
+total           60.0%               6       10             6
+
+vendor, lenient (legal suffix ignored, e.g. 'Acme Pvt Ltd' == 'Acme'): 10/10 (informational, not the headline)
+
+LINE ITEMS (item-level, aligned one-to-one)
+------------------------------------  -------------
+GT items / predicted items            66 / 66
+exact item matches (desc+qty+amount)  48
+item precision / recall               72.7% / 72.7%
+description accuracy                  87.9%
+quantity accuracy                     95.5%
+amount accuracy                       80.3%
+------------------------------------  -------------
+
+SUMMARY
+-----------------------------------  ----------------
+overall field accuracy               75.0% (60/80)
+overall exact (raw) accuracy         71.2%
+exact document match rate            40.0%
+documents with >= 1 field error      6/10
+validation failures (totals/schema)  2 ['L05', 'L10']
+pipeline failures                    0
+non-invoices correctly classified    1/1
+-----------------------------------  ----------------
+
+PER DOCUMENT
+DOC    STATUS       FIELDS OK    WRONG FIELDS                                                TOTALS CHECK    REVIEW      CALLS
+-----  -----------  -----------  ----------------------------------------------------------  --------------  --------  -------
+L01    extracted    8/8          -                                                           ok              no              2
+L02    extracted    3/8          invoice_number, invoice_date, line_items, tax_total, total  ok              yes             2
+L03    extracted    8/8          -                                                           ok              yes             2
+L04    extracted    7/8          line_items                                                  ok              yes             2
+L05    extracted    3/8          invoice_number, invoice_date, line_items, tax_total, total  mismatch        yes             3
+L06    extracted    8/8          -                                                           ok              no              2
+L07    extracted    6/8          line_items, total                                           ok              no              2
+L08    not_invoice  8/8          -                                                           not_applicable  no              1
+L09    extracted    4/8          invoice_date, line_items, tax_total, total                  ok              yes             2
+L10    extracted    5/8          invoice_number, invoice_date, line_items                    mismatch        yes             3
+
+INVOICE CLASSIFICATION (rows = ground truth, columns = prediction)
+               pred invoice    pred non-invoice    pipeline failed
+-----------  --------------  ------------------  -----------------
+invoice                   9                   0                  0
+non_invoice               0                   1                  0
+invoice precision 100.0%, invoice recall 100.0%, non-invoice recall 100.0%
+
+HUMAN-REVIEW FLAG vs ACTUAL ERRORS
+               has error    no error
+-----------  -----------  ----------
+flagged                5           1
+not flagged            1           3
+precision 83.3%, recall 83.3%, field errors inside flagged docs: 18/20
+
+COST (provider-reported tokens x published price)
+total $0.006351 | avg/doc $0.000635 (no-prompt-cache upper bound $0.001137) | avg tokens in (uncached+cached)/out 2248.4+5579.2/708.9 | API calls 21 (repairs 2, verify 9, retries 0)
+
+config: model=gpt-6-luna effort=none input_mode=hybrid prompt=v3 repair_attempts=1 verify_scans=True numeric_tolerance=0.01
+
+Detailed results written to D:\Downloads\cursor work\es\invoice-intelligence\reports\experiments\T_heldout_r1

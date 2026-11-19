@@ -1,0 +1,81 @@
+document_id,field,correct,exact_raw,predicted,expected,note,needs_review
+L01,is_invoice,True,True,true,true,,True
+L01,vendor,True,True,"""Northwind Logistics Ltd""","""Northwind Logistics Ltd""",,True
+L01,invoice_number,False,False,null,"""NWL-88213""",,True
+L01,invoice_date,False,False,null,"""2026-04-08""",,True
+L01,currency,False,False,null,"""GBP""",,True
+L01,line_items,False,False,null,"[{""description"": ""Pallet freight, Manchester to Glasgow"", ""quantity"": 3, ""amount"": 435.0}, {""description"": ""Fuel surcharge (flat rate)"", ""quantity"": 1, ""amount"": 62.5}, {""description"": ""Warehousing, per pallet per week"", ""quantity"": 12, ""amount"": 57.0}, {""description"": ""Proof-of-delivery admin fee"", ""quantity"": 3, ""amount"": 15.0}]",,True
+L01,tax_total,False,False,null,113.9,,True
+L01,total,False,False,null,683.4,,True
+L02,is_invoice,False,False,false,true,,True
+L02,vendor,False,False,null,"""Shree Ganesh Stationers""",,True
+L02,invoice_number,False,False,null,"""SGS/1847""",,True
+L02,invoice_date,False,False,null,"""2026-08-19""",,True
+L02,currency,False,False,null,"""INR""",,True
+L02,line_items,False,False,null,"[{""description"": ""Exam pad A4 (200 pages)"", ""quantity"": 150, ""amount"": 8700.0}, {""description"": ""Ball pen blue (box of 50)"", ""quantity"": 20, ""amount"": 4800.0}, {""description"": ""Whiteboard duster"", ""quantity"": 10, ""amount"": 350.0}, {""description"": ""Chart paper white (pack of 20)"", ""quantity"": 25, ""amount"": 3000.0}, {""description"": ""Stapler pin No.10 (box)"", ""quantity"": 40, ""amount"": 560.0}, {""description"": ""File folder, plastic"", ""quantity"": 100, ""amount"": 2200.0}]",,True
+L02,tax_total,False,False,null,3529.8,,True
+L02,total,False,False,null,23139.8,,True
+L03,is_invoice,True,True,true,true,,True
+L03,vendor,False,False,"""KAMAL ENGINEERING WORKS PVT LTD""","""Kaveri Office Mart Pvt Ltd""",,True
+L03,invoice_number,False,False,null,"""KOM/26-27/00418""",,True
+L03,invoice_date,False,False,null,"""2026-06-23""",,True
+L03,currency,True,True,"""INR""","""INR""",,True
+L03,line_items,False,False,null,"[{""description"": ""A4 copier paper 75 GSM (ream)"", ""quantity"": 40, ""amount"": 11560.0}, {""description"": ""Whiteboard markers (box of 10)"", ""quantity"": 12, ""amount"": 2580.0}, {""description"": ""Ergonomic mesh office chair"", ""quantity"": 6, ""amount"": 38700.0}, {""description"": ""Heavy-duty stapler"", ""quantity"": 4, ""amount"": 1540.0}]",,True
+L03,tax_total,False,False,null,9788.4,,True
+L03,total,False,False,null,64168.4,,True
+L04,is_invoice,True,True,true,true,,True
+L04,vendor,True,True,"""Meridian Print & Pack LLP""","""Meridian Print & Pack LLP""",,True
+L04,invoice_number,False,False,null,"""MPP-2026-0207""",,True
+L04,invoice_date,False,False,null,"""2026-02-17""",,True
+L04,currency,True,True,"""INR""","""INR""",,True
+L04,line_items,False,False,null,"[{""description"": ""Corrugated box 12x9x6 in (3-ply)"", ""quantity"": 500, ""amount"": 9250.0}, {""description"": ""Corrugated box 16x12x8 in (3-ply)"", ""quantity"": 400, ""amount"": 10700.0}, {""description"": ""Corrugated box 20x16x12 in (5-ply)"", ""quantity"": 250, ""amount"": 14500.0}, {""description"": ""Mailer box 10x8x3 in, kraft"", ""quantity"": 600, ""amount"": 8520.0}, {""description"": ""Mailer box 12x10x4 in, white"", ""quantity"": 600, ""amount"": 10740.0}, {""description"": ""Bubble wrap roll 1m x 100m"", ""quantity"": 30, ""amount"": 35400.0}, {""description"": ""BOPP packing tape 48mm x 100m"", ""quantity"": 240, ""amount"": 11040.0}, {""description"": ""BOPP packing tape 48mm x 50m, printed"", ""quantity"": 120, ""amount"": 4740.0}, {""description"": ""Stretch film 500mm x 300m"", ""quantity"": 60, ""amount"": 24600.0}, {""description"": ""Edge protector 50x50x3mm, 1m"", ""quantity"": 800, ""amount"": 6240.0}, {""description"": ""Paper void fill roll 380mm x 300m"", ""quantity"": 24, ""amount"": 16560.0}, {""description"": ""Foam sheet 2mm, 1m x 50m"", ""quantity"": 16, ""amount"": 21200.0}, {""description"": ""Zip pouch 6x9 in (pack of 100)"", ""quantity"": 80, ""amount"": 7360.0}, {""description"": ""Zip pouch 9x12 in (pack of 100)"", ""quantity"": 80, ""amount"": 11040.0}, {""description"": ""Tamper-evident bag 12x15 in (pack of 100)"", ""quantity"": 50, ""amount"": 10750.0}, {""description"": ""Thermal label roll 100x150mm"", ""quantity"": 90, ""amount"": 15120.0}, {""description"": ""Barcode label A4 sheet (pack of 100)"", ""quantity"": 35, ""amount"": 10850.0}, {""description"": ""Fragile sticker roll (500)"", ""quantity"": 40, ""amount"": 5040.0}, {""description"": ""Corrugated divider set 12-cell"", ""quantity"": 300, ""amount"": 6420.0}, {""description"": ""Carton sealing gun"", ""quantity"": 6, ""amount"": 3840.0}, {""description"": ""Pallet wrap dispenser"", ""quantity"": 8, ""amount"": 3880.0}, {""description"": ""Custom print setup charge"", ""quantity"": 1, ""amount"": 4500.0}, {""description"": ""Die-cut tooling charge (one-time)"", ""quantity"": 1, ""amount"": 9800.0}, {""description"": ""Freight, Pune to Nashik (part load)"", ""quantity"": 1, ""amount"": 6200.0}]",,True
+L04,tax_total,False,False,null,32194.8,,True
+L04,total,False,False,null,300484.8,,True
+L05,is_invoice,True,True,true,true,,True
+L05,vendor,False,False,"""BRIGHT ELECTRICAL SUPPLIES""","""Orbit Hardware Supplies""",,True
+L05,invoice_number,False,False,null,"""OHS-0261-26""",,True
+L05,invoice_date,False,False,null,"""2026-01-27""",,True
+L05,currency,True,True,"""INR""","""INR""",,True
+L05,line_items,False,False,null,"[{""description"": ""Hex bolt M10 x 60 (box of 100)"", ""quantity"": 14, ""amount"": 8960.0}, {""description"": ""Wood screw 2 in (box of 500)"", ""quantity"": 20, ""amount"": 6300.0}, {""description"": ""Cutting disc 4 in (pack of 25)"", ""quantity"": 12, ""amount"": 9360.0}, {""description"": ""Welding electrode 3.15mm (5 kg)"", ""quantity"": 18, ""amount"": 12420.0}, {""description"": ""Angle grinder 850W"", ""quantity"": 3, ""amount"": 10350.0}, {""description"": ""Drill bit set HSS (13 pc)"", ""quantity"": 6, ""amount"": 6720.0}, {""description"": ""Safety gloves, leather (pair)"", ""quantity"": 40, ""amount"": 3840.0}, {""description"": ""Spirit level 600mm"", ""quantity"": 5, ""amount"": 2050.0}, {""description"": ""Measuring tape 5m"", ""quantity"": 15, ""amount"": 2775.0}, {""description"": ""Anchor fastener M12 (box of 50)"", ""quantity"": 9, ""amount"": 7830.0}]",,True
+L05,tax_total,False,False,null,12708.9,,True
+L05,total,False,False,null,83313.9,,True
+L06,is_invoice,True,True,true,true,,True
+L06,vendor,False,False,"""Anand & Sons Associates""","""Anand & Rao Associates""",,True
+L06,invoice_number,False,False,null,"""AR/2026/0093""",,True
+L06,invoice_date,False,False,null,"""2026-05-30""",,True
+L06,currency,True,True,"""INR""","""INR""",,True
+L06,line_items,False,False,"""<1 items>""","""<4 items>""",0/4 items matched; predicted 1,True
+L06,tax_total,False,False,0.0,10933.2,,True
+L06,total,False,False,null,71673.2,,True
+L07,is_invoice,True,True,true,true,,True
+L07,vendor,False,False,"""RICKY PLUMBING SERVICES""","""Pixel Harbor Studio""",,True
+L07,invoice_number,False,False,null,"""PHS-1042""",,True
+L07,invoice_date,False,False,null,"""2026-03-14""",,True
+L07,currency,True,True,"""USD""","""USD""",,True
+L07,line_items,False,False,"""<4 items>""","""<4 items>""",0/4 items matched; predicted 4,True
+L07,tax_total,False,False,0.0,334.13,,True
+L07,total,False,False,550.0,4384.13,,True
+L08,is_invoice,True,True,false,false,,False
+L08,vendor,True,True,null,null,,False
+L08,invoice_number,True,True,null,null,,False
+L08,invoice_date,True,True,null,null,,False
+L08,currency,True,True,null,null,,False
+L08,line_items,True,True,null,null,,False
+L08,tax_total,True,True,null,null,,False
+L08,total,True,True,null,null,,False
+L09,is_invoice,False,False,false,true,,True
+L09,vendor,False,False,null,"""Coastal Fresh Seafoods""",,True
+L09,invoice_number,False,False,null,"""CFS-4471""",,True
+L09,invoice_date,False,False,null,"""2026-10-14""",,True
+L09,currency,False,False,null,"""INR""",,True
+L09,line_items,False,False,null,"[{""description"": ""King fish (seer), cleaned, kg"", ""quantity"": 12.5, ""amount"": 11500.0}, {""description"": ""Tiger prawns 16/20, kg"", ""quantity"": 18, ""amount"": 14040.0}, {""description"": ""Pomfret, whole, kg"", ""quantity"": 9.5, ""amount"": 6080.0}, {""description"": ""Squid, cleaned, kg"", ""quantity"": 7, ""amount"": 2870.0}, {""description"": ""Crab (live), kg"", ""quantity"": 11, ""amount"": 6160.0}]",,True
+L09,tax_total,False,False,null,2032.5,,True
+L09,total,False,False,null,42682.5,,True
+L10,is_invoice,True,True,true,true,,True
+L10,vendor,False,False,"""Mohan Auto Parts""","""Metro Auto Parts""",,True
+L10,invoice_number,False,False,null,"""MAP/D/09-0312""",,True
+L10,invoice_date,False,False,null,"""2026-09-03""",,True
+L10,currency,True,True,"""INR""","""INR""",,True
+L10,line_items,False,False,null,"[{""description"": ""Brake pad set, front (sedan)"", ""quantity"": 8, ""amount"": 14800.0}, {""description"": ""Air filter element"", ""quantity"": 12, ""amount"": 5040.0}, {""description"": ""Wiper blade 20 in (pair)"", ""quantity"": 15, ""amount"": 5700.0}, {""description"": ""Engine oil 5W-30, 4 L can"", ""quantity"": 20, ""amount"": 39200.0}, {""description"": ""Coolant concentrate, 1 L"", ""quantity"": 18, ""amount"": 5580.0}]",,True
+L10,tax_total,False,False,null,19689.6,,True
+L10,total,False,False,null,90009.6,,True

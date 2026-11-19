@@ -1,0 +1,26 @@
+20 documents, 0 already done, 20 to process
+DOC    STATUS       DOC TYPE        TOTALS CHECK    REVIEW    ERROR
+-----  -----------  --------------  --------------  --------  -------
+L01    extracted    invoice         ok              no
+L02    extracted    invoice         ok              no
+L03    extracted    invoice         ok              no
+L04    extracted    invoice         ok              no
+L05    extracted    invoice         ok              no
+L06    extracted    invoice         ok              no
+L07    extracted    invoice         ok              no
+L08    not_invoice  purchase_order  not_applicable  no
+L09    extracted    invoice         ok              no
+L10    extracted    invoice         ok              no
+U01    extracted    invoice         ok              no
+U02    extracted    invoice         mismatch        yes
+U03    extracted    invoice         ok              no
+U04    extracted    invoice         ok              yes
+U05    extracted    invoice         ok              no
+U06    not_invoice  bank_statement  not_applicable  no
+U07    extracted    invoice         ok              no
+U08    extracted    invoice         ok              no
+U09    extracted    invoice         ok              no
+U10    not_invoice  letter          not_applicable  no
+
+total cost $0.010720 | avg/doc $0.000536 (no-prompt-cache upper bound $0.000777) | avg tokens in (uncached+cached)/out 2514+2679.8/515.6 | calls 26
+outputs: D:\Downloads\cursor work\es\invoice-intelligence\outputs  |  cost report: D:\Downloads\cursor work\es\invoice-intelligence\reports\cost_per_document.csv

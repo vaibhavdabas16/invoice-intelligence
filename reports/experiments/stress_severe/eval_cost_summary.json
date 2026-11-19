@@ -1,0 +1,39 @@
+{
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "pricing_as_of": "2026-11-19",
+  "prices_usd_per_mtok": {
+    "gpt-6-luna": {
+      "input": 0.1,
+      "output": 0.5
+    }
+  },
+  "method": "cost = input_tokens x input price + output_tokens x output price, using the token counts reported by the provider API on each call (thinking tokens are included in output_tokens). Repair calls and retries that returned a response are included. Cached re-runs reuse the original call's recorded usage, so the figures are what a fresh extraction costs.",
+  "all": {
+    "documents": 10,
+    "documents_with_api_calls": 10,
+    "total_cost_usd": 0.00268,
+    "avg_cost_per_document_usd": 0.000268,
+    "avg_input_tokens": 696.6,
+    "avg_output_tokens": 365.5,
+    "total_input_tokens": 6966,
+    "total_output_tokens": 3655,
+    "total_api_calls": 10,
+    "total_repair_calls": 0,
+    "total_transient_retries": 0,
+    "avg_api_latency_s": 7.5
+  },
+  "subset:labelled": {
+    "documents": 10,
+    "documents_with_api_calls": 10,
+    "total_cost_usd": 0.00268,
+    "avg_cost_per_document_usd": 0.000268,
+    "avg_input_tokens": 696.6,
+    "avg_output_tokens": 365.5,
+    "total_input_tokens": 6966,
+    "total_output_tokens": 3655,
+    "total_api_calls": 10,
+    "total_repair_calls": 0,
+    "total_transient_retries": 0,
+    "avg_api_latency_s": 7.5
+  }
+}

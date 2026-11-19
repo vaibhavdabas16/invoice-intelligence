@@ -1,0 +1,184 @@
+{
+  "document_id": "U07",
+  "source_file": "U07.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 8320.0,
+    "tax_total": 1580.8,
+    "computed_total": 9900.8,
+    "printed_total": 9900.8,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 8320.0,
+    "tax_lines": [
+      {
+        "label": "MwSt. 19 %",
+        "amount": 1580.8
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      95.0,
+      110.0,
+      480.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "TechNova Solutions GmbH",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "TechNova Solutions GmbH  |  RE-2026-0317"
+    },
+    {
+      "field": "invoice_number",
+      "value": "RE-2026-0317",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "TechNova Solutions GmbH  |  RE-2026-0317"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-04-28",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "28.04.2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "1580.8",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "€ 1.580,80"
+    },
+    {
+      "field": "total",
+      "value": "9900.8",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "€ 9.900,80"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Softwareentwicklung (Stunden)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Softwareentwicklung (Stunden)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "6080.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6.080,00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Projektmanagement (Stunden)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Projektmanagement (Stunden)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "1760.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "1.760,00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Einrichtung Hosting (einmalig)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Einrichtung Hosting (einmalig)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "480.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "480,00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2364,
+    "cached_input_tokens": 1563,
+    "output_tokens": 188,
+    "cost_usd": 0.00034603,
+    "cost_usd_no_prompt_cache": 0.00048670000000000007,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2364,
+        "output_tokens": 188,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_2205599a271b48b6ba81f630a1548c56",
+      "latency_s": 3.268,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 3.398,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

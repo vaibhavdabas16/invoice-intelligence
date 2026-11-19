@@ -1,0 +1,62 @@
+FIELD-LEVEL ACCURACY (normalised match; see README 'Matching rules')
+FIELD           ACCURACY      CORRECT    TOTAL    EXACT(raw)
+--------------  ----------  ---------  -------  ------------
+is_invoice      100.0%             10       10            10
+vendor          100.0%             10       10             7
+invoice_number  100.0%             10       10            10
+invoice_date    100.0%             10       10            10
+currency        100.0%             10       10            10
+line_items      100.0%             10       10            10
+tax_total       100.0%             10       10            10
+total           100.0%             10       10            10
+
+vendor, lenient (legal suffix ignored, e.g. 'Acme Pvt Ltd' == 'Acme'): 10/10 (informational, not the headline)
+
+LINE ITEMS (item-level, aligned one-to-one)
+------------------------------------  ---------------
+GT items / predicted items            66 / 66
+exact item matches (desc+qty+amount)  66
+item precision / recall               100.0% / 100.0%
+description accuracy                  100.0%
+quantity accuracy                     100.0%
+amount accuracy                       100.0%
+------------------------------------  ---------------
+
+SUMMARY
+-----------------------------------  --------------
+overall field accuracy               100.0% (80/80)
+overall exact (raw) accuracy         96.2%
+exact document match rate            100.0%
+documents with >= 1 field error      0/10
+validation failures (totals/schema)  0
+pipeline failures                    0
+non-invoices correctly classified    1/1
+-----------------------------------  --------------
+
+PER DOCUMENT
+DOC    STATUS       FIELDS OK    WRONG FIELDS    TOTALS CHECK    REVIEW      CALLS
+-----  -----------  -----------  --------------  --------------  --------  -------
+L01    extracted    8/8          -               ok              no              1
+L02    extracted    8/8          -               ok              no              1
+L03    extracted    8/8          -               ok              no              1
+L04    extracted    8/8          -               ok              no              1
+L05    extracted    8/8          -               ok              no              1
+L06    extracted    8/8          -               ok              no              1
+L07    extracted    8/8          -               ok              no              1
+L08    not_invoice  8/8          -               not_applicable  no              1
+L09    extracted    8/8          -               ok              no              1
+L10    extracted    8/8          -               ok              no              1
+
+HUMAN-REVIEW FLAG vs ACTUAL ERRORS
+               has error    no error
+-----------  -----------  ----------
+flagged                0           0
+not flagged            0          10
+precision n/a, recall n/a, field errors inside flagged docs: 0/0
+
+COST (provider-reported tokens x published price)
+total $0.005242 | avg/doc $0.000524 | avg tokens in/out 3818.7/821.7 | API calls 10 (repairs 0, retries 0)
+
+config: model=gpt-5-nano effort=low input_mode=hybrid prompt=v1 repair_attempts=1 numeric_tolerance=0.01
+
+Detailed results written to D:\Downloads\cursor work\es\invoice-intelligence\reports\experiments\gpt5nano

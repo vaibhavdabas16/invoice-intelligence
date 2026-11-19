@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Intelligence</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --panel: #ffffff; --ink: #18202b; --muted: #627083; --line: #e3e7ec;
+    --accent: #1f5eff; --ok: #12805c; --ok-bg: #e6f5ef; --warn: #a15c00; --warn-bg: #fff3e0;
+    --bad: #b42318; --bad-bg: #fdecea; --neutral-bg: #eef1f5; --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1318; --panel: #171c23; --ink: #e6e9ee; --muted: #93a0b2; --line: #2a313b;
+      --accent: #6c95ff; --ok: #4cc79a; --ok-bg: #12291f; --warn: #f0b056; --warn-bg: #2c2112;
+      --bad: #ff7b6e; --bad-bg: #321715; --neutral-bg: #212833; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 16px; margin: 0; font-weight: 650; letter-spacing: .2px; }
+  header .meta { color: var(--muted); font-size: 12px; }
+  main { display: grid; grid-template-columns: minmax(320px, 1fr) minmax(380px, 1.1fr); gap: 16px; padding: 16px 24px; max-width: 1500px; margin: 0 auto; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 12px 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+  .panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  #drop { border: 1.5px dashed var(--line); border-radius: 10px; padding: 28px 16px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+  #drop.over, #drop:hover { border-color: var(--accent); background: var(--neutral-bg); }
+  #drop strong { color: var(--accent); }
+  #drop small { display: block; color: var(--muted); margin-top: 4px; }
+  #preview { margin-top: 14px; height: 70vh; min-height: 380px; border: 1px solid var(--line); border-radius: 8px; overflow: auto; background: var(--neutral-bg); display: flex; align-items: flex-start; justify-content: center; }
+  #preview img { max-width: 100%; display: block; }
+  #preview iframe { width: 100%; height: 100%; border: 0; }
+  #preview .empty { margin: auto; color: var(--muted); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--neutral-bg); color: var(--muted); }
+  .badge.ok { background: var(--ok-bg); color: var(--ok); } .badge.warn { background: var(--warn-bg); color: var(--warn); } .badge.bad { background: var(--bad-bg); color: var(--bad); }
+  .callout { border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 13px; }
+  .callout.warn { background: var(--warn-bg); color: var(--warn); } .callout.bad { background: var(--bad-bg); color: var(--bad); }
+  .callout ul { margin: 6px 0 0 18px; padding: 0; }
+  .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .field { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+  .field label { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+  .field div { font-weight: 600; overflow-wrap: anywhere; }
+  .null { color: var(--muted); font-weight: 400; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.flag td { background: var(--warn-bg); }
+  .recon { margin-top: 14px; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; font-variant-numeric: tabular-nums; }
+  .recon .total { font-weight: 700; border-top: 1px solid var(--line); padding-top: 4px; }
+  .recon span:nth-child(even) { text-align: right; }
+  details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+  h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 8px; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+  .step { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; }
+  .step .dot { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; background: var(--neutral-bg); color: var(--muted); }
+  .step.pass .dot { background: var(--ok-bg); color: var(--ok); } .step.fail .dot { background: var(--bad-bg); color: var(--bad); } .step.warn .dot { background: var(--warn-bg); color: var(--warn); }
+  .decision { margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-weight: 650; }
+  .decision.ok { background: var(--ok-bg); color: var(--ok); } .decision.review { background: var(--warn-bg); color: var(--warn); }
+  td.src { font-family: var(--mono); font-size: 12px; overflow-wrap: anywhere; }
+  .lowp { color: var(--bad); font-weight: 700; }
+  pre { background: var(--neutral-bg); padding: 12px; border-radius: 8px; overflow: auto; font: 12px/1.45 var(--mono); max-height: 360px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  button { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 6px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: 12px; }
+  .usage { color: var(--muted); font-size: 12px; margin-top: 12px; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; display: inline-block; vertical-align: middle; margin-right: 8px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #placeholder { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Invoice Intelligence</h1>
+  <span class="meta" id="health">checking service...</span>
+</header>
+<main>
+  <section class="panel">
+    <h2>Document</h2>
+    <div id="drop" tabindex="0" role="button" aria-label="Upload a document">
+      <strong>Choose a file</strong> or drop it here
+      <small>PDF, JPG, PNG, WEBP, TIFF &middot; up to 20 MB</small>
+      <input type="file" id="file" accept=".pdf,image/*" hidden>
+    </div>
+    <div id="preview"><span class="empty">No document loaded</span></div>
+  </section>
+  <section class="panel" id="out">
+    <h2>Extraction</h2>
+    <div id="placeholder">Upload a document to extract invoice fields.</div>
+    <div id="content" hidden></div>
+  </section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtNum = (n, cur) => n === null || n === undefined ? '<span class="null">null</span>'
+  : esc(Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })) + (cur ? ` <span class="null">${esc(cur)}</span>` : "");
+const val = (v) => v === null || v === undefined ? '<span class="null">null</span>' : esc(v);
+
+fetch("/health").then((r) => r.json()).then((h) => { $("health").textContent = `${h.provider} · ${h.model} · ${h.input_mode}`; })
+  .catch(() => { $("health").textContent = "service unreachable"; });
+
+const drop = $("drop"), input = $("file");
+drop.addEventListener("click", () => input.click());
+drop.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") input.click(); });
+["dragover", "dragenter"].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", (e) => { if (e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]); });
+input.addEventListener("change", () => { if (input.files[0]) handle(input.files[0]); });
+
+let objectUrl = null;
+function showPreview(file) {
+  if (objectUrl) URL.revokeObjectURL(objectUrl);
+  objectUrl = URL.createObjectURL(file);
+  const p = $("preview");
+  p.innerHTML = "";
+  if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+    const f = document.createElement("iframe"); f.src = objectUrl; f.title = "PDF preview"; p.appendChild(f);
+  } else if (file.type.startsWith("image/")) {
+    const img = document.createElement("img"); img.src = objectUrl; img.alt = "Document preview"; p.appendChild(img);
+  } else {
+    p.innerHTML = '<span class="empty">No preview for this file type</span>';
+  }
+}
+
+async function handle(file) {
+  showPreview(file);
+  $("placeholder").hidden = false;
+  $("content").hidden = true;
+  $("placeholder").innerHTML = '<span class="spinner"></span>Extracting…';
+  const body = new FormData(); body.append("file", file);
+  try {
+    const res = await fetch("/extract", { method: "POST", body });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || res.statusText);
+    render(data);
+  } catch (err) {
+    $("placeholder").innerHTML = `<div class="callout bad">Request failed: ${esc(err.message)}</div>`;
+  }
+}
+
+// --- validation workflow: one row per check the pipeline actually ran on this document -------------
+function step(state, name, detail) {
+  const icon = { pass: "✓", fail: "✕", warn: "!", skip: "–" }[state];
+  return `<li class="step ${state}"><span class="dot">${icon}</span><span><strong>${esc(name)}</strong><br><span class="null">${esc(detail)}</span></span></li>`;
+}
+
+function renderWorkflow(result, m) {
+  if (m.error) return "";
+  const steps = [];
+  const fc = m.financial_check || {};
+  const attempts = m.attempts || [];
+  const repaired = attempts.some((a) => a.kind.endsWith("repair"));
+  steps.push(step("pass", "Schema validation", repaired ? "passed after a repair call" : "strict Pydantic schema passed"));
+  if (!result.is_invoice) {
+    steps.push(step("pass", "Classification", `not an invoice (${(m.auxiliary_extraction || {}).document_type || "?"}): all other fields null`));
+  } else {
+    const fin = { ok: ["pass", "items + tax = total"], mismatch: ["fail", "totals do not reconcile"], unresolved_adjustments: ["warn", "only reconciles via charges outside the item table"], insufficient_data: ["warn", "total or line items missing"] }[fc.status] || ["skip", fc.status || "n/a"];
+    steps.push(step(fin[0], "Totals check", fin[1]));
+    const sub = fc.subtotal_matches === false || fc.tax_lines_match === false || (fc.row_mismatches || []).length;
+    steps.push(step(sub ? "fail" : "pass", "Subtotal / tax lines / qty × price", sub ? "inconsistency found" : "consistent where printed"));
+    const ev = m.evidence || [];
+    const unsupported = ev.filter((e) => e.status === "unsupported").length;
+    const checkable = ev.filter((e) => e.status !== "not_checkable").length;
+    steps.push(checkable
+      ? step(unsupported ? "fail" : "pass", "Evidence in PDF text layer", `${checkable - unsupported}/${checkable} values found on the page${unsupported ? `, ${unsupported} not found` : ""}`)
+      : step("skip", "Evidence in PDF text layer", "no text layer (scan/photo): not checkable"));
+    const cc = m.consistency_check;
+    steps.push(!cc ? step("skip", "Independent re-read", "only runs for scans/photos")
+      : !cc.checked ? step("fail", "Independent re-read", "re-read failed")
+      : !cc.disagreements.length ? step("pass", "Independent re-read", "both reads agree")
+      : step(cc.resolved ? "warn" : "fail", "Independent re-read", cc.resolution));
+    const conf = m.token_confidence;
+    if (conf) {
+      const low = conf.filter((c) => c.min_prob < (m.config.confidence_threshold ?? 0.5)).length;
+      steps.push(step(low ? "fail" : "pass", "Token confidence", low ? `${low} field(s) below p=${m.config.confidence_threshold}` : "no field below threshold"));
+    } else {
+      steps.push(step("skip", "Token confidence", "disabled (TOKEN_CONFIDENCE=false)"));
+    }
+  }
+  const decision = m.needs_review
+    ? `<div class="decision review">Decision: needs human review (${m.review_reasons.length} reason${m.review_reasons.length === 1 ? "" : "s"})</div>`
+    : `<div class="decision ok">Decision: no review needed</div>`;
+  return `<h3>Validation workflow</h3><ul class="steps">${steps.join("")}</ul>${decision}`;
+}
+
+function renderEvidence(m) {
+  const ev = m.evidence || [];
+  if (!ev.length) return "";
+  if (ev.every((e) => e.status === "not_checkable") && !(m.token_confidence || []).length) {
+    return `<p class="null" style="margin-top:16px">Field evidence: not checkable for ${ev.length} values (scan/photo, no PDF text layer). The independent re-read and the arithmetic checks are the verification here.</p>`;
+  }
+  const conf = Object.fromEntries((m.token_confidence || []).map((c) => [c.field, c]));
+  const thr = m.config.confidence_threshold ?? 0.5;
+  const badge = { grounded: "ok", derived: "ok", unsupported: "bad", not_checkable: "" };
+  const rows = ev.map((e) => {
+    const c = conf[e.field];
+    const p = c ? `<span class="${c.min_prob < thr ? "lowp" : ""}">${c.min_prob.toFixed(2)}</span>` : '<span class="null">–</span>';
+    return `<tr><td>${esc(e.field)}</td><td>${esc(e.value)}</td><td><span class="badge ${badge[e.status]}">${esc(e.status.replace("_", " "))}</span></td><td class="num">${e.page ?? "–"}</td><td class="src">${e.source_text ? esc(e.source_text) : '<span class="null">–</span>'}</td><td class="num">${p}</td></tr>`;
+  }).join("");
+  return `<details ${ev.some((e) => e.status === "unsupported") ? "open" : ""}><summary>Field evidence (where each value is printed)</summary>
+    <table><thead><tr><th>Field</th><th>Value</th><th>Status</th><th class="num">Page</th><th>Source text</th><th class="num">Token p</th></tr></thead><tbody>${rows}</tbody></table>
+    <p class="null">Evidence is found by searching the PDF text layer, not reported by the model. Token p is the lowest token probability inside the value (not a calibrated confidence).</p></details>`;
+}
+
+function renderReread(cc) {
+  if (!cc.checked) return "";
+  const list = cc.disagreements.length ? `<ul>${cc.disagreements.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : "<p>Both reads agree on every compared field.</p>";
+  return `<details ${cc.disagreements.length ? "open" : ""}><summary>Independent re-read (scans/photos)</summary>${list}<p class="null">${esc(cc.resolution)}. The first read is always the one kept; values are never swapped.</p></details>`;
+}
+
+function render({ result, metadata: m }) {
+  const out = [];
+  const badges = [];
+  if (m.status === "failed") badges.push('<span class="badge bad">Processing failed</span>');
+  else if (result.is_invoice) badges.push('<span class="badge ok">Invoice</span>');
+  else badges.push(`<span class="badge">Not an invoice${m.auxiliary_extraction ? " · " + esc(m.auxiliary_extraction.document_type.replace("_", " ")) : ""}</span>`);
+  const fc = m.financial_check;
+  if (fc && fc.status !== "not_applicable") {
+    const cls = fc.status === "ok" ? "ok" : fc.status === "mismatch" ? "bad" : "warn";
+    const label = { ok: "Totals reconcile", mismatch: "Totals do not reconcile", unresolved_adjustments: "Charges outside item table", insufficient_data: "Totals not checkable" }[fc.status] || fc.status;
+    badges.push(`<span class="badge ${cls}">${label}</span>`);
+  }
+  badges.push(m.needs_review ? '<span class="badge warn">Needs review</span>' : '<span class="badge ok">No review needed</span>');
+  out.push(`<div class="badges">${badges.join("")}</div>`);
+
+  if (m.error) {
+    out.push(`<div class="callout bad"><strong>${esc(m.error.category.replaceAll("_", " "))}</strong>: ${esc(m.error.message)}<br>${esc(m.error.hint || "")}</div>`);
+  }
+  if (m.needs_review && m.review_reasons.length && !m.error) {
+    out.push(`<div class="callout warn"><strong>Why this needs review</strong><ul>${m.review_reasons.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>`);
+  }
+
+  if (result.is_invoice) {
+    const cur = result.currency;
+    out.push(`<div class="fields">
+      <div class="field"><label>Vendor</label><div>${val(result.vendor)}</div></div>
+      <div class="field"><label>Invoice number</label><div>${val(result.invoice_number)}</div></div>
+      <div class="field"><label>Invoice date</label><div>${val(result.invoice_date)}</div></div>
+      <div class="field"><label>Currency</label><div>${val(cur)}</div></div>
+      <div class="field"><label>Tax total</label><div>${fmtNum(result.tax_total)}</div></div>
+      <div class="field"><label>Total</label><div>${fmtNum(result.total)}</div></div>
+    </div>`);
+    const flagged = new Set((fc && fc.row_mismatches) || []);
+    const items = result.line_items || [];
+    out.push(`<table><thead><tr><th>#</th><th>Description</th><th class="num">Qty</th><th class="num">Amount</th></tr></thead><tbody>
+      ${items.map((it, i) => `<tr class="${flagged.has(i) ? "flag" : ""}"><td>${i + 1}</td><td>${esc(it.description)}</td><td class="num">${it.quantity === null ? '<span class="null">-</span>' : esc(it.quantity)}</td><td class="num">${fmtNum(it.amount)}</td></tr>`).join("")}
+      ${items.length ? "" : '<tr><td colspan="4" class="null">No line items extracted</td></tr>'}
+    </tbody></table>`);
+    if (fc && fc.line_items_sum !== null) {
+      out.push(`<div class="recon">
+        <span>Sum of line items</span><span>${fmtNum(fc.line_items_sum)}</span>
+        <span>+ Tax total</span><span>${fmtNum(fc.tax_total ?? 0)}</span>
+        ${fc.adjustments_sum !== null ? `<span>Charges outside table (not in schema)</span><span>${fmtNum(fc.adjustments_sum)}</span>` : ""}
+        <span class="total">= Computed total</span><span class="total">${fmtNum(fc.computed_total)}</span>
+        <span>Printed total</span><span>${fmtNum(fc.printed_total)}</span>
+        <span>Difference</span><span>${fmtNum(fc.difference)}</span>
+      </div>`);
+    }
+  }
+
+  out.push(renderWorkflow(result, m));
+  if (result.is_invoice) out.push(renderEvidence(m));
+  if (m.consistency_check) out.push(renderReread(m.consistency_check));
+
+  const u = m.usage;
+  if (u && u.api_calls) {
+    out.push(`<div class="usage">${u.api_calls} API call(s) · ${u.input_tokens.toLocaleString()} in / ${u.output_tokens.toLocaleString()} out tokens · $${(u.cost_usd ?? 0).toFixed(5)}${u.served_from_cache ? " · served from cache" : ""} · ${m.duration_s}s</div>`);
+  }
+  out.push(`<details open><summary class="row">Required-schema JSON</summary>
+    <div class="row" style="justify-content:flex-end;margin-top:6px"><button id="copy">Copy JSON</button></div>
+    <pre id="json">${esc(JSON.stringify(result, null, 2))}</pre></details>`);
+  out.push(`<details><summary>Processing metadata</summary><pre>${esc(JSON.stringify(m, null, 2))}</pre></details>`);
+
+  $("placeholder").hidden = true;
+  const c = $("content"); c.innerHTML = out.join(""); c.hidden = false;
+  $("copy").addEventListener("click", () => navigator.clipboard.writeText(JSON.stringify(result, null, 2)).then(() => { $("copy").textContent = "Copied"; }));
+}
+</script>
+</body>
+</html>

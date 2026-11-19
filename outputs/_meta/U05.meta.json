@@ -1,0 +1,236 @@
+{
+  "document_id": "U05",
+  "source_file": "U05.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 2676.0,
+    "tax_total": 535.2,
+    "computed_total": 3211.2,
+    "printed_total": 3211.2,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 2676.0,
+    "tax_lines": [
+      {
+        "label": "VAT @ 20%",
+        "amount": 535.2
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      1.42,
+      68.0,
+      41.0,
+      28.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "ok"
+  },
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Lakeside Printing Co",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_number",
+      "value": "LP-10932",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-10-21",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "tax_total",
+      "value": "535.2",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "total",
+      "value": "3211.2",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 description",
+      "value": "Prospectus, A4 24pp, saddle-stitched",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 amount",
+      "value": "2130.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 description",
+      "value": "Pull-up banner 850x2000mm",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 amount",
+      "value": "272.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 description",
+      "value": "Letterhead 120gsm (ream of 500)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 amount",
+      "value": "246.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 description",
+      "value": "Delivery",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 amount",
+      "value": "28.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "scanned_pdf",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1568,
+        1148
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1568,
+        "height": 1148,
+        "contrast_std": 44.07,
+        "laplacian_std": 20.94,
+        "orientation_ratio": 0.141,
+        "warnings": [
+          "possible_90deg_rotation (row/col ratio=0.14)"
+        ]
+      }
+    ],
+    "warnings": [
+      "page 1: possible_90deg_rotation (row/col ratio=0.14)"
+    ]
+  },
+  "usage": {
+    "api_calls": 2,
+    "transient_retries": 0,
+    "input_tokens": 2194,
+    "cached_input_tokens": 5314,
+    "output_tokens": 655,
+    "cost_usd": 0.00060004,
+    "cost_usd_no_prompt_cache": 0.0010783000000000001,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2191,
+        "output_tokens": 324,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 91,
+      "stop_reason": "end_turn",
+      "request_id": "req_e207ba53df4d428887b9dbc5e80ab062",
+      "latency_s": 4.952,
+      "transient_retries": 0,
+      "from_cache": false
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 331,
+        "cache_read_input_tokens": 3751,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 98,
+      "stop_reason": "end_turn",
+      "request_id": "req_5e0288b4261e4f7384057a1367221af5",
+      "latency_s": 4.014,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 9.087,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "baseline_alarms": {
+    "U04": {
+      "grounding": false,
+      "arithmetic": true
+    }
+  },
+  "stats": {
+    "invoice_number: drop a character": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 0,
+      "either": 36,
+      "neither": 0
+    },
+    "invoice_number: change a digit": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 0,
+      "either": 36,
+      "neither": 0
+    },
+    "vendor: change a letter": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 0,
+      "either": 36,
+      "neither": 0
+    },
+    "invoice_date: +1 day": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 0,
+      "either": 36,
+      "neither": 0
+    },
+    "invoice_date: day/month swapped": {
+      "cases": 15,
+      "grounding": 12,
+      "arithmetic": 0,
+      "either": 12,
+      "neither": 3
+    },
+    "total: change a digit": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 33,
+      "either": 36,
+      "neither": 0
+    },
+    "tax_total: change a digit": {
+      "cases": 30,
+      "grounding": 28,
+      "arithmetic": 28,
+      "either": 28,
+      "neither": 2
+    },
+    "line amount: change a digit": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 31,
+      "either": 36,
+      "neither": 0
+    },
+    "description: change a letter": {
+      "cases": 36,
+      "grounding": 36,
+      "arithmetic": 0,
+      "either": 36,
+      "neither": 0
+    },
+    "total replaced by printed subtotal": {
+      "cases": 30,
+      "grounding": 0,
+      "arithmetic": 30,
+      "either": 30,
+      "neither": 0
+    }
+  },
+  "documents": [
+    "L01",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "U01",
+    "U03",
+    "U04",
+    "U07",
+    "U08",
+    "U09"
+  ]
+}

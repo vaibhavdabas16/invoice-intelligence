@@ -1,0 +1,139 @@
+{
+  "document_id": "U05",
+  "source_file": "U05.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 2676.0,
+    "tax_total": 535.2,
+    "computed_total": 3211.2,
+    "printed_total": 3211.2,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 2676.0,
+    "tax_lines": [
+      {
+        "label": "VAT @ 20%",
+        "amount": 535.2
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      1.42,
+      68.0,
+      41.0,
+      28.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "ok"
+  },
+  "preprocessing": {
+    "source_kind": "scanned_pdf",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1568,
+        1148
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1568,
+        "height": 1148,
+        "contrast_std": 44.07,
+        "laplacian_std": 20.94,
+        "orientation_ratio": 0.141,
+        "warnings": [
+          "possible_90deg_rotation (row/col ratio=0.14)"
+        ]
+      }
+    ],
+    "warnings": [
+      "page 1: possible_90deg_rotation (row/col ratio=0.14)"
+    ]
+  },
+  "usage": {
+    "api_calls": 2,
+    "transient_retries": 0,
+    "input_tokens": 2194,
+    "cached_input_tokens": 5314,
+    "output_tokens": 835,
+    "cost_usd": 0.0006900400000000001,
+    "cost_usd_no_prompt_cache": 0.0011683000000000002,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2191,
+        "output_tokens": 446,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 118,
+      "stop_reason": "end_turn",
+      "request_id": "req_a5edde13e01549f497dc9e404cd6c7b1",
+      "latency_s": 5.488,
+      "transient_retries": 0,
+      "from_cache": true
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 389,
+        "cache_read_input_tokens": 3751,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 156,
+      "stop_reason": "end_turn",
+      "request_id": "req_2f8524c3a8e6413d90f72b212a270bd5",
+      "latency_s": 7.52,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.153,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "prompt_version": "v3"
+  }
+}

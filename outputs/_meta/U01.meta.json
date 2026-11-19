@@ -1,0 +1,192 @@
+{
+  "document_id": "U01",
+  "source_file": "U01.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 27680.0,
+    "tax_total": 2980.5,
+    "computed_total": 30660.5,
+    "printed_total": 30660.5,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 27680.0,
+    "tax_lines": [
+      {
+        "label": "GST @ 12% (room)",
+        "amount": 2592.0
+      },
+      {
+        "label": "GST @ 5% (restaurant)",
+        "amount": 271.5
+      },
+      {
+        "label": "GST @ 18% (laundry)",
+        "amount": 117.0
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      7200.0,
+      5430.0,
+      650.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Blue Lotus Hospitality",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Blue Lotus Hospitality  |  BL/GA/26/5528"
+    },
+    {
+      "field": "invoice_number",
+      "value": "BL/GA/26/5528",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Blue Lotus Hospitality  |  BL/GA/26/5528"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-11-10",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10-Nov-2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "2980.5",
+      "status": "derived",
+      "page": 1,
+      "source_text": "₹2,592.00 + ₹271.50 + ₹117.00"
+    },
+    {
+      "field": "total",
+      "value": "30660.5",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹30,660.50"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Room charges, Deluxe (per night)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Room charges, Deluxe (per night)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "21600.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "21,600.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Restaurant and bar",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Restaurant and bar"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "5430.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "5,430.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Laundry service",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Laundry service"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "650.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "650.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2395,
+    "cached_input_tokens": 1563,
+    "output_tokens": 234,
+    "cost_usd": 0.00037213,
+    "cost_usd_no_prompt_cache": 0.0005128,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2395,
+        "output_tokens": 234,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_aea551ab4f4b47f6accc9122cdd4c874",
+      "latency_s": 4.614,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 4.775,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

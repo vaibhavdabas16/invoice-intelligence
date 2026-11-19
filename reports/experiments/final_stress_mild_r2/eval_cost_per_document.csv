@@ -1,0 +1,11 @@
+document_id,subset,status,source_kind,pages,provider,model,api_calls,transient_retries,repair_calls,verify_calls,input_tokens,cached_input_tokens,output_tokens,cost_usd,cost_usd_no_prompt_cache,served_from_cache,processing_s,api_latency_s
+L01,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7410,713,0.0004312,0.0010981,False,12.549,12.461
+L02,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7528,1113,0.00063238,0.0013099,False,15.691,15.58
+L03,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7410,575,0.0003622,0.0010291,False,9.006,8.906
+L04,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,5294,3201,0.00165404,0.0021305,False,31.058,30.966
+L05,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7484,1902,0.00102644,0.0017,False,20.046,19.992
+L06,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7410,549,0.0003492,0.0010161,False,9.843,9.79
+L07,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7484,821,0.00048594,0.0011595,False,10.747,10.666
+L08,labelled,not_invoice,image,1,openai,gpt-6-luna,1,0,0,0,3,3705,162,0.00011835,0.0004518,False,3.447,3.394
+L09,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7528,1290,0.00072088,0.0013984,False,17.589,17.53
+L10,labelled,extracted,image,1,openai,gpt-6-luna,2,0,0,1,6,7528,993,0.00057238,0.0012499,False,13.628,13.571

@@ -1,0 +1,69 @@
+DATASET: EXPLORATION SET stress_severe (derived/synthetic; not the evaluation set, no generalisation claims)
+
+FIELD-LEVEL ACCURACY (normalised match; see README 'Matching rules')
+FIELD           ACCURACY      CORRECT    TOTAL    EXACT(raw)
+--------------  ----------  ---------  -------  ------------
+is_invoice      80.0%               8       10             8
+vendor          30.0%               3       10             3
+invoice_number  10.0%               1       10             1
+invoice_date    10.0%               1       10             1
+currency        70.0%               7       10             7
+line_items      10.0%               1       10             1
+tax_total       10.0%               1       10             1
+total           10.0%               1       10             1
+
+vendor, lenient (legal suffix ignored, e.g. 'Acme Pvt Ltd' == 'Acme'): 3/10 (informational, not the headline)
+
+LINE ITEMS (item-level, aligned one-to-one)
+------------------------------------  -----------
+GT items / predicted items            66 / 5
+exact item matches (desc+qty+amount)  0
+item precision / recall               0.0% / 0.0%
+description accuracy                  0.0%
+quantity accuracy                     0.0%
+amount accuracy                       0.0%
+------------------------------------  -----------
+
+SUMMARY
+-----------------------------------  --------------------------------------------
+overall field accuracy               28.7% (23/80)
+overall exact (raw) accuracy         28.7%
+exact document match rate            10.0%
+documents with >= 1 field error      9/10
+validation failures (totals/schema)  6 ['L01', 'L03', 'L04', 'L05', 'L06', 'L10']
+pipeline failures                    0
+non-invoices correctly classified    1/1
+-----------------------------------  --------------------------------------------
+
+PER DOCUMENT
+DOC    STATUS       FIELDS OK    WRONG FIELDS                                                                              TOTALS CHECK       REVIEW      CALLS
+-----  -----------  -----------  ----------------------------------------------------------------------------------------  -----------------  --------  -------
+L01    extracted    2/8          invoice_number, invoice_date, currency, line_items, tax_total, total                      insufficient_data  yes             2
+L02    not_invoice  0/8          is_invoice, vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  not_applicable     yes             1
+L03    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total                        insufficient_data  yes             2
+L04    extracted    3/8          invoice_number, invoice_date, line_items, tax_total, total                                insufficient_data  yes             2
+L05    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total                        insufficient_data  yes             2
+L06    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total                        insufficient_data  yes             2
+L07    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total                        ok                 yes             2
+L08    not_invoice  8/8          -                                                                                         not_applicable     no              1
+L09    not_invoice  0/8          is_invoice, vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  not_applicable     yes             1
+L10    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total                        insufficient_data  yes             2
+
+INVOICE CLASSIFICATION (rows = ground truth, columns = prediction)
+               pred invoice    pred non-invoice    pipeline failed
+-----------  --------------  ------------------  -----------------
+invoice                   7                   2                  0
+non_invoice               0                   1                  0
+invoice precision 100.0%, invoice recall 77.8%, non-invoice recall 100.0%
+
+HUMAN-REVIEW FLAG vs ACTUAL ERRORS
+               has error    no error
+-----------  -----------  ----------
+flagged                9           0
+not flagged            0           1
+precision 100.0%, recall 100.0%, field errors inside flagged docs: 57/57
+
+COST (provider-reported tokens x published price)
+total $0.003559 | avg/doc $0.000356 (no-prompt-cache upper bound $0.000723) | avg tokens in (uncached+cached)/out 2090.2+4077.3/212.3 | API calls 17 (repairs 0, verify 7, retries 0)
+
+config: model=gpt-6-luna effort=none input_mode=hybrid prompt=v3 repair_attempts=1 verify_scans=True numeric_tolerance=0.01

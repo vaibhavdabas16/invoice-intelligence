@@ -1,0 +1,504 @@
+{
+  "document_id": "L04",
+  "source_file": "L04.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 268290.0,
+    "tax_total": 32194.8,
+    "computed_total": 300484.8,
+    "printed_total": 300484.8,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 268290.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 12%",
+        "amount": 32194.8
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      18.5,
+      26.75,
+      58.0,
+      14.2,
+      17.9,
+      1180.0,
+      46.0,
+      39.5,
+      410.0,
+      7.8,
+      690.0,
+      1325.0,
+      92.0,
+      138.0,
+      215.0,
+      168.0,
+      310.0,
+      126.0,
+      21.4,
+      640.0,
+      485.0,
+      4500.0,
+      9800.0,
+      6200.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Meridian Print & Pack LLP",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Meridian Print & Pack LLP  |  MPP-2026-0207"
+    },
+    {
+      "field": "invoice_number",
+      "value": "MPP-2026-0207",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Meridian Print & Pack LLP  |  MPP-2026-0207"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-02-17",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "17 Feb 2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "32194.8",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "₹32,194.80"
+    },
+    {
+      "field": "total",
+      "value": "300484.8",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "₹3,00,484.80"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Corrugated box 12x9x6 in (3-ply)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Corrugated box 12x9x6 in (3-ply)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "9250.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "9,250.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Corrugated box 16x12x8 in (3-ply)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Corrugated box 16x12x8 in (3-ply)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "10700.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,700.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Corrugated box 20x16x12 in (5-ply)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Corrugated box 20x16x12 in (5-ply)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "14500.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "14,500.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Mailer box 10x8x3 in, kraft",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Mailer box 10x8x3 in, kraft"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "8520.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "8,520.00"
+    },
+    {
+      "field": "line 5 description",
+      "value": "Mailer box 12x10x4 in, white",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Mailer box 12x10x4 in, white"
+    },
+    {
+      "field": "line 5 amount",
+      "value": "10740.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,740.00"
+    },
+    {
+      "field": "line 6 description",
+      "value": "Bubble wrap roll 1m x 100m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Bubble wrap roll 1m x 100m"
+    },
+    {
+      "field": "line 6 amount",
+      "value": "35400.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "35,400.00"
+    },
+    {
+      "field": "line 7 description",
+      "value": "BOPP packing tape 48mm x 100m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "BOPP packing tape 48mm x 100m"
+    },
+    {
+      "field": "line 7 amount",
+      "value": "11040.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "11,040.00"
+    },
+    {
+      "field": "line 8 description",
+      "value": "BOPP packing tape 48mm x 50m, printed",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "BOPP packing tape 48mm x 50m, printed"
+    },
+    {
+      "field": "line 8 amount",
+      "value": "4740.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "4,740.00"
+    },
+    {
+      "field": "line 9 description",
+      "value": "Stretch film 500mm x 300m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Stretch film 500mm x 300m"
+    },
+    {
+      "field": "line 9 amount",
+      "value": "24600.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "24,600.00"
+    },
+    {
+      "field": "line 10 description",
+      "value": "Edge protector 50x50x3mm, 1m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Edge protector 50x50x3mm, 1m"
+    },
+    {
+      "field": "line 10 amount",
+      "value": "6240.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6,240.00"
+    },
+    {
+      "field": "line 11 description",
+      "value": "Paper void fill roll 380mm x 300m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Paper void fill roll 380mm x 300m"
+    },
+    {
+      "field": "line 11 amount",
+      "value": "16560.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "16,560.00"
+    },
+    {
+      "field": "line 12 description",
+      "value": "Foam sheet 2mm, 1m x 50m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Foam sheet 2mm, 1m x 50m"
+    },
+    {
+      "field": "line 12 amount",
+      "value": "21200.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "21,200.00"
+    },
+    {
+      "field": "line 13 description",
+      "value": "Zip pouch 6x9 in (pack of 100)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Zip pouch 6x9 in (pack of 100)"
+    },
+    {
+      "field": "line 13 amount",
+      "value": "7360.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "7,360.00"
+    },
+    {
+      "field": "line 14 description",
+      "value": "Zip pouch 9x12 in (pack of 100)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Zip pouch 9x12 in (pack of 100)"
+    },
+    {
+      "field": "line 14 amount",
+      "value": "11040.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "11,040.00"
+    },
+    {
+      "field": "line 15 description",
+      "value": "Tamper-evident bag 12x15 in (pack of 100)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Tamper-evident bag 12x15 in (pack of 100)"
+    },
+    {
+      "field": "line 15 amount",
+      "value": "10750.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,750.00"
+    },
+    {
+      "field": "line 16 description",
+      "value": "Thermal label roll 100x150mm",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Thermal label roll 100x150mm"
+    },
+    {
+      "field": "line 16 amount",
+      "value": "15120.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "15,120.00"
+    },
+    {
+      "field": "line 17 description",
+      "value": "Barcode label A4 sheet (pack of 100)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Barcode label A4 sheet (pack of 100)"
+    },
+    {
+      "field": "line 17 amount",
+      "value": "10850.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,850.00"
+    },
+    {
+      "field": "line 18 description",
+      "value": "Fragile sticker roll (500)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Fragile sticker roll (500)"
+    },
+    {
+      "field": "line 18 amount",
+      "value": "5040.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "5,040.00"
+    },
+    {
+      "field": "line 19 description",
+      "value": "Corrugated divider set 12-cell",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Corrugated divider set 12-cell"
+    },
+    {
+      "field": "line 19 amount",
+      "value": "6420.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6,420.00"
+    },
+    {
+      "field": "line 20 description",
+      "value": "Carton sealing gun",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Carton sealing gun"
+    },
+    {
+      "field": "line 20 amount",
+      "value": "3840.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "3,840.00"
+    },
+    {
+      "field": "line 21 description",
+      "value": "Pallet wrap dispenser",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "Pallet wrap dispenser"
+    },
+    {
+      "field": "line 21 amount",
+      "value": "3880.0",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "3,880.00"
+    },
+    {
+      "field": "line 22 description",
+      "value": "Custom print setup charge",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "Custom print setup charge"
+    },
+    {
+      "field": "line 22 amount",
+      "value": "4500.0",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "4,500.00"
+    },
+    {
+      "field": "line 23 description",
+      "value": "Die-cut tooling charge (one-time)",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "Die-cut tooling charge (one-time)"
+    },
+    {
+      "field": "line 23 amount",
+      "value": "9800.0",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "9,800.00"
+    },
+    {
+      "field": "line 24 description",
+      "value": "Freight, Pune to Nashik (part load)",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "Freight, Pune to Nashik (part load)"
+    },
+    {
+      "field": "line 24 amount",
+      "value": "6200.0",
+      "status": "grounded",
+      "page": 2,
+      "source_text": "6,200.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 2,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ],
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null,
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 5046,
+    "cached_input_tokens": 1563,
+    "output_tokens": 805,
+    "cost_usd": 0.00092273,
+    "cost_usd_no_prompt_cache": 0.0010634000000000002,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 5046,
+        "output_tokens": 805,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_084fe142a69148018a07dafa0a588983",
+      "latency_s": 7.582,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.482,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

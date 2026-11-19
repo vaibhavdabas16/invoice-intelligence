@@ -1,0 +1,127 @@
+{
+  "document_id": "L04",
+  "source_file": "L04.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 268290.0,
+    "tax_total": 32194.8,
+    "computed_total": 300484.8,
+    "printed_total": 300484.8,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 268290.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 12%",
+        "amount": 32194.8
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      18.5,
+      26.75,
+      58.0,
+      14.2,
+      17.9,
+      1180.0,
+      46.0,
+      39.5,
+      410.0,
+      7.8,
+      690.0,
+      1325.0,
+      92.0,
+      138.0,
+      215.0,
+      168.0,
+      310.0,
+      126.0,
+      21.4,
+      640.0,
+      485.0,
+      4500.0,
+      9800.0,
+      6200.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 2,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ],
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null,
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 3,
+    "cached_input_tokens": 6606,
+    "output_tokens": 1249,
+    "cost_usd": 0.0006908599999999998,
+    "cost_usd_no_prompt_cache": 0.0012854000000000001,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 1249,
+        "cache_read_input_tokens": 6606,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 20,
+      "stop_reason": "end_turn",
+      "request_id": "req_05c1741eaa794c14b432e794b60b6917",
+      "latency_s": 12.285,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.267,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "prompt_version": "v3"
+  }
+}

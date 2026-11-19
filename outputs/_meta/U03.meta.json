@@ -1,0 +1,172 @@
+{
+  "document_id": "U03",
+  "source_file": "U03.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 1305.5,
+    "tax_total": 0.0,
+    "computed_total": 1305.5,
+    "printed_total": 1305.5,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 1305.5,
+    "tax_lines": [],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      85.0,
+      22.0,
+      45.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "QUICKSERVE IT RENTALS",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Quickserve IT Rentals  |  QS-30918"
+    },
+    {
+      "field": "invoice_number",
+      "value": "QS-30918",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Quickserve IT Rentals  |  QS-30918"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-11-03",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date        Nov 03, 2026"
+    },
+    {
+      "field": "total",
+      "value": "1305.5",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "$1,305.50"
+    },
+    {
+      "field": "line 1 description",
+      "value": "On-site technician (hours)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "On-site technician (hours)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "1062.5",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "1,062.50"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Laptop rental (per day)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Laptop rental (per day)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "198.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "198.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Travel charge",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Travel charge"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "45.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "45.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2301,
+    "cached_input_tokens": 1563,
+    "output_tokens": 310,
+    "cost_usd": 0.00040073,
+    "cost_usd_no_prompt_cache": 0.0005414,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2301,
+        "output_tokens": 310,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 49,
+      "stop_reason": "end_turn",
+      "request_id": "req_5bf201ada0b64b76acd4077031057ad8",
+      "latency_s": 5.317,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 5.505,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "document_id": "L01",
+  "source_file": "L01.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 569.5,
+    "tax_total": 113.9,
+    "computed_total": 683.4,
+    "printed_total": 683.4,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 569.5,
+    "tax_lines": [
+      {
+        "label": "VAT @ 20%",
+        "amount": 113.9
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      145.0,
+      62.5,
+      4.75,
+      5.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Northwind Logistics Ltd",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Northwind Logistics Ltd  |  NWL-88213"
+    },
+    {
+      "field": "invoice_number",
+      "value": "NWL-88213",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Northwind Logistics Ltd  |  NWL-88213"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-04-08",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date 08 April 2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "113.9",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "£113.90"
+    },
+    {
+      "field": "total",
+      "value": "683.4",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "£683.40"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Pallet freight, Manchester to Glasgow",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Pallet freight, Manchester to Glasgow"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "435.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "435.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Fuel surcharge (flat rate)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Fuel surcharge (flat rate)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "62.5",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "62.50"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Warehousing, per pallet per week",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Warehousing, per pallet per week"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "57.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "57.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Proof-of-delivery admin fee",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Proof-of-delivery admin fee"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "15.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "15.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2349,
+    "cached_input_tokens": 1563,
+    "output_tokens": 218,
+    "cost_usd": 0.00035953,
+    "cost_usd_no_prompt_cache": 0.0005002,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2349,
+        "output_tokens": 218,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_b351ae2389fa4c60822109235fe73958",
+      "latency_s": 5.693,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.186,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

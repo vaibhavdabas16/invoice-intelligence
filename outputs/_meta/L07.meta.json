@@ -1,0 +1,199 @@
+{
+  "document_id": "L07",
+  "source_file": "L07.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 4050.0,
+    "tax_total": 334.13,
+    "computed_total": 4384.13,
+    "printed_total": 4384.13,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 4050.0,
+    "tax_lines": [
+      {
+        "label": "Sales tax @ 8.25%",
+        "amount": 334.13
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      3200.0,
+      850.0,
+      150.0,
+      -450.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "PIXEL HARBOR STUDIO",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Pixel Harbor Studio  |  PHS-1042"
+    },
+    {
+      "field": "invoice_number",
+      "value": "PHS-1042",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Pixel Harbor Studio  |  PHS-1042"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-03-14",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date        March 14, 2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "334.13",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "$334.13"
+    },
+    {
+      "field": "total",
+      "value": "4384.13",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "$4,384.13"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Brand identity package",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Brand identity package"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "3200.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "3,200.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Social media templates (set of 12)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Social media templates (set of 12)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "850.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "850.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Additional revision rounds",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Additional revision rounds"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "450.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "450.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Returning client discount (10%)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Returning client discount (10%)"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "-450.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "450.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2346,
+    "cached_input_tokens": 1563,
+    "output_tokens": 315,
+    "cost_usd": 0.00040773000000000003,
+    "cost_usd_no_prompt_cache": 0.0005484000000000001,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2346,
+        "output_tokens": 315,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_e983408a2a7d4bea9ac115be7e58b286",
+      "latency_s": 4.207,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.254,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

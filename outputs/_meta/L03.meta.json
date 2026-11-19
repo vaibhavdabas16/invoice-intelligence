@@ -1,0 +1,203 @@
+{
+  "document_id": "L03",
+  "source_file": "L03.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 54380.0,
+    "tax_total": 9788.4,
+    "computed_total": 64168.4,
+    "printed_total": 64168.4,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 54380.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 9%",
+        "amount": 4894.2
+      },
+      {
+        "label": "SGST @ 9%",
+        "amount": 4894.2
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      289.0,
+      215.0,
+      6450.0,
+      385.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Kaveri Office Mart Pvt Ltd",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Kaveri Office Mart Pvt Ltd  |  KOM/26-27/00418"
+    },
+    {
+      "field": "invoice_number",
+      "value": "KOM/26-27/00418",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Kaveri Office Mart Pvt Ltd  |  KOM/26-27/00418"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-06-23",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "23/06/2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "9788.4",
+      "status": "derived",
+      "page": 1,
+      "source_text": "₹4,894.20 + ₹4,894.20"
+    },
+    {
+      "field": "total",
+      "value": "64168.4",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹64,168.40"
+    },
+    {
+      "field": "line 1 description",
+      "value": "A4 copier paper 75 GSM (ream)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "A4 copier paper 75 GSM (ream)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "11560.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "11,560.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Whiteboard markers (box of 10)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Whiteboard markers (box of 10)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "2580.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "2,580.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Ergonomic mesh office chair",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Ergonomic mesh office chair"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "38700.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "38,700.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Heavy-duty stapler",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Heavy-duty stapler"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "1540.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "1,540.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2438,
+    "cached_input_tokens": 1563,
+    "output_tokens": 283,
+    "cost_usd": 0.00040093,
+    "cost_usd_no_prompt_cache": 0.0005416,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2438,
+        "output_tokens": 283,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 26,
+      "stop_reason": "end_turn",
+      "request_id": "req_e42d6b5f33f64178ab408e524380025e",
+      "latency_s": 6.738,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.225,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

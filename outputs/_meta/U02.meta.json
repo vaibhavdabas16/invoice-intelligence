@@ -1,0 +1,285 @@
+{
+  "document_id": "U02",
+  "source_file": "U02.jpg",
+  "status": "extracted",
+  "needs_review": true,
+  "review_reasons": [
+    "totals do not reconcile (difference +2.00)",
+    "line items do not sum to the printed subtotal",
+    "model reported 1 ambiguity note(s)",
+    "first extraction failed automated checks and needed a repair call"
+  ],
+  "error": null,
+  "financial_check": {
+    "status": "mismatch",
+    "tolerance": 0.02,
+    "line_items_sum": 829.75,
+    "tax_total": 85.25,
+    "computed_total": 915.0,
+    "printed_total": 917.0,
+    "difference": 2.0,
+    "adjustments_sum": null,
+    "subtotal_matches": false,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [
+      "line items sum to 829.75 but the printed subtotal is 831.75",
+      "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+    ],
+    "passed": false
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 831.75,
+    "tax_lines": [
+      {
+        "label": "Sales Tax @ 10.25%",
+        "amount": 85.25
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      64.0,
+      38.5,
+      41.25,
+      9.6,
+      36.0
+    ],
+    "ambiguities": [
+      "Printed line-item amounts sum to 829.75, which differs from the printed subtotal of 831.75."
+    ],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "mismatch"
+  },
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Harborview Dental Supplies",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_number",
+      "value": "HDS-60417",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-09-14",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "tax_total",
+      "value": "85.25",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "total",
+      "value": "917.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 description",
+      "value": "Nitrile exam gloves, M (case of 10 boxes)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 amount",
+      "value": "384.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 description",
+      "value": "Disposable dental mirrors (pack of 100)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 amount",
+      "value": "154.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 description",
+      "value": "Prophy paste, mint (jar of 200)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 amount",
+      "value": "123.75",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 description",
+      "value": "Saliva ejector tips (bag of 100)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 amount",
+      "value": "96.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 description",
+      "value": "Patient bibs (case of 500)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 amount",
+      "value": "72.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "image",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1136,
+        1568
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1050,
+        "height": 1449,
+        "contrast_std": 46.12,
+        "laplacian_std": 17.9,
+        "orientation_ratio": 0.878,
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 3,
+    "transient_retries": 0,
+    "input_tokens": 2897,
+    "cached_input_tokens": 8973,
+    "output_tokens": 3030,
+    "cost_usd": 0.00189443,
+    "cost_usd_no_prompt_cache": 0.002702,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "financial_failed",
+      "problems": [
+        "line items sum to 829.75 but the printed subtotal is 831.75",
+        "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+      ],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2145,
+        "output_tokens": 1056,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 761,
+      "stop_reason": "end_turn",
+      "request_id": "req_b75eeea72ece4a1aa21336bbd177f936",
+      "latency_s": 14.355,
+      "transient_retries": 0,
+      "from_cache": false
+    },
+    {
+      "kind": "repair",
+      "stage": "financial_failed",
+      "problems": [
+        "line items sum to 829.75 but the printed subtotal is 831.75",
+        "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+      ],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 749,
+        "output_tokens": 761,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 447,
+      "stop_reason": "end_turn",
+      "request_id": "req_d8783bc8ba174053a7a0f62f9183c887",
+      "latency_s": 9.483,
+      "transient_retries": 0,
+      "from_cache": false
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "financial_failed",
+      "problems": [
+        "line items sum to 829.75 but the printed subtotal is 831.75",
+        "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+      ],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 1213,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 791,
+      "stop_reason": "end_turn",
+      "request_id": "req_afa5cda82d1d4f13a9ef71f4f3fdf37c",
+      "latency_s": 14.531,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 38.539,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

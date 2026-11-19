@@ -1,0 +1,81 @@
+document_id,field,correct,exact_raw,predicted,expected,note,needs_review
+L01,is_invoice,True,True,true,true,,False
+L01,vendor,True,True,"""Northwind Logistics Ltd""","""Northwind Logistics Ltd""",,False
+L01,invoice_number,True,True,"""NWL-88213""","""NWL-88213""",,False
+L01,invoice_date,True,True,"""2026-04-08""","""2026-04-08""",,False
+L01,currency,True,True,"""GBP""","""GBP""",,False
+L01,line_items,True,True,"""<4 items>""","""<4 items>""",4/4 items matched; predicted 4,False
+L01,tax_total,True,True,113.9,113.9,,False
+L01,total,True,True,683.4,683.4,,False
+L02,is_invoice,True,True,true,true,,False
+L02,vendor,True,True,"""Shree Ganesh Stationers""","""Shree Ganesh Stationers""",,False
+L02,invoice_number,True,True,"""SGS/1847""","""SGS/1847""",,False
+L02,invoice_date,True,True,"""2026-08-19""","""2026-08-19""",,False
+L02,currency,True,True,"""INR""","""INR""",,False
+L02,line_items,True,True,"""<6 items>""","""<6 items>""",6/6 items matched; predicted 6,False
+L02,tax_total,True,True,3529.8,3529.8,,False
+L02,total,True,True,23139.8,23139.8,,False
+L03,is_invoice,True,True,true,true,,False
+L03,vendor,True,True,"""Kaveri Office Mart Pvt Ltd""","""Kaveri Office Mart Pvt Ltd""",,False
+L03,invoice_number,True,True,"""KOM/26-27/00418""","""KOM/26-27/00418""",,False
+L03,invoice_date,True,True,"""2026-06-23""","""2026-06-23""",,False
+L03,currency,True,True,"""INR""","""INR""",,False
+L03,line_items,True,True,"""<4 items>""","""<4 items>""",4/4 items matched; predicted 4,False
+L03,tax_total,True,True,9788.4,9788.4,,False
+L03,total,True,True,64168.4,64168.4,,False
+L04,is_invoice,True,True,true,true,,True
+L04,vendor,True,True,"""Meridian Print & Pack LLP""","""Meridian Print & Pack LLP""",,True
+L04,invoice_number,False,False,"""MP-2026-0207""","""MPP-2026-0207""",,True
+L04,invoice_date,False,False,"""2026-02-11""","""2026-02-17""",,True
+L04,currency,True,True,"""INR""","""INR""",,True
+L04,line_items,False,False,"""<24 items>""","""<24 items>""",20/24 items matched; predicted 24,True
+L04,tax_total,True,True,32194.8,32194.8,,True
+L04,total,True,True,300484.8,300484.8,,True
+L05,is_invoice,True,True,true,true,,False
+L05,vendor,True,False,"""ORBIT HARDWARE SUPPLIES""","""Orbit Hardware Supplies""",,False
+L05,invoice_number,True,True,"""OHS-0261-26""","""OHS-0261-26""",,False
+L05,invoice_date,True,True,"""2026-01-27""","""2026-01-27""",,False
+L05,currency,True,True,"""INR""","""INR""",,False
+L05,line_items,True,True,"""<10 items>""","""<10 items>""",10/10 items matched; predicted 10,False
+L05,tax_total,True,True,12708.9,12708.9,,False
+L05,total,True,True,83313.9,83313.9,,False
+L06,is_invoice,True,True,true,true,,False
+L06,vendor,True,True,"""Anand & Rao Associates""","""Anand & Rao Associates""",,False
+L06,invoice_number,True,True,"""AR/2026/0093""","""AR/2026/0093""",,False
+L06,invoice_date,True,True,"""2026-05-30""","""2026-05-30""",,False
+L06,currency,True,True,"""INR""","""INR""",,False
+L06,line_items,True,True,"""<4 items>""","""<4 items>""",4/4 items matched; predicted 4,False
+L06,tax_total,True,True,10933.2,10933.2,,False
+L06,total,True,True,71673.2,71673.2,,False
+L07,is_invoice,True,True,true,true,,False
+L07,vendor,True,False,"""PIXEL HARBOR STUDIO""","""Pixel Harbor Studio""",,False
+L07,invoice_number,True,True,"""PHS-1042""","""PHS-1042""",,False
+L07,invoice_date,True,True,"""2026-03-14""","""2026-03-14""",,False
+L07,currency,True,True,"""USD""","""USD""",,False
+L07,line_items,True,True,"""<4 items>""","""<4 items>""",4/4 items matched; predicted 4,False
+L07,tax_total,True,True,334.13,334.13,,False
+L07,total,True,True,4384.13,4384.13,,False
+L08,is_invoice,True,True,false,false,,False
+L08,vendor,True,True,null,null,,False
+L08,invoice_number,True,True,null,null,,False
+L08,invoice_date,True,True,null,null,,False
+L08,currency,True,True,null,null,,False
+L08,line_items,True,True,null,null,,False
+L08,tax_total,True,True,null,null,,False
+L08,total,True,True,null,null,,False
+L09,is_invoice,True,True,true,true,,False
+L09,vendor,True,False,"""COASTAL FRESH SEAFOODS""","""Coastal Fresh Seafoods""",,False
+L09,invoice_number,True,True,"""CFS-4471""","""CFS-4471""",,False
+L09,invoice_date,True,True,"""2026-10-14""","""2026-10-14""",,False
+L09,currency,True,True,"""INR""","""INR""",,False
+L09,line_items,True,True,"""<5 items>""","""<5 items>""",5/5 items matched; predicted 5,False
+L09,tax_total,True,True,2032.5,2032.5,,False
+L09,total,True,True,42682.5,42682.5,,False
+L10,is_invoice,True,True,true,true,,False
+L10,vendor,True,True,"""Metro Auto Parts""","""Metro Auto Parts""",,False
+L10,invoice_number,True,True,"""MAP/D/09-0312""","""MAP/D/09-0312""",,False
+L10,invoice_date,True,True,"""2026-09-03""","""2026-09-03""",,False
+L10,currency,True,True,"""INR""","""INR""",,False
+L10,line_items,True,True,"""<5 items>""","""<5 items>""",5/5 items matched; predicted 5,False
+L10,tax_total,True,True,19689.6,19689.6,,False
+L10,total,True,True,90009.6,90009.6,,False

@@ -1,0 +1,266 @@
+{
+  "document_id": "L02",
+  "source_file": "L02.jpg",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 19610.0,
+    "tax_total": 3529.8,
+    "computed_total": 23139.8,
+    "printed_total": 23139.8,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 19610.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 9%",
+        "amount": 1764.9
+      },
+      {
+        "label": "SGST @ 9%",
+        "amount": 1764.9
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      58.0,
+      240.0,
+      35.0,
+      120.0,
+      14.0,
+      22.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "ok"
+  },
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Shree Ganesh Stationers",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_number",
+      "value": "SGS/1847",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-08-19",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "tax_total",
+      "value": "3529.8",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "total",
+      "value": "23139.8",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 description",
+      "value": "Exam pad A4 (200 pages)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 amount",
+      "value": "8700.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 description",
+      "value": "Ball pen blue (box of 50)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 amount",
+      "value": "4800.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 description",
+      "value": "Whiteboard duster",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 amount",
+      "value": "350.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 description",
+      "value": "Chart paper white (pack of 20)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 amount",
+      "value": "3000.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 description",
+      "value": "Stapler pin No.10 (box)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 amount",
+      "value": "560.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 6 description",
+      "value": "File folder, plastic",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 6 amount",
+      "value": "2200.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "image",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1136,
+        1568
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1500,
+        "height": 2070,
+        "contrast_std": 59.11,
+        "laplacian_std": 23.47,
+        "orientation_ratio": 8.543,
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 2,
+    "transient_retries": 0,
+    "input_tokens": 2148,
+    "cached_input_tokens": 5268,
+    "output_tokens": 807,
+    "cost_usd": 0.0006709800000000001,
+    "cost_usd_no_prompt_cache": 0.0011451,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2145,
+        "output_tokens": 303,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_218aa491ca8f44ca90026e7da4c270a5",
+      "latency_s": 6.794,
+      "transient_retries": 0,
+      "from_cache": true
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 504,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 50,
+      "stop_reason": "end_turn",
+      "request_id": "req_366329839a694b4ca3c5ee66b1dc6bbd",
+      "latency_s": 5.198,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.252,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

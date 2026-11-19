@@ -1,0 +1,289 @@
+{
+  "document_id": "L05",
+  "source_file": "L05.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 70605.0,
+    "tax_total": 12708.9,
+    "computed_total": 83313.9,
+    "printed_total": 83313.9,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 70605.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 18%",
+        "amount": 12708.9
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      640.0,
+      315.0,
+      780.0,
+      690.0,
+      3450.0,
+      1120.0,
+      96.0,
+      410.0,
+      185.0,
+      870.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "ORBIT HARDWARE SUPPLIES",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Orbit Hardware Supplies  |  OHS-0261-26"
+    },
+    {
+      "field": "invoice_number",
+      "value": "OHS-0261-26",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Orbit Hardware Supplies  |  OHS-0261-26"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-01-27",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date        27/01/2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "12708.9",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹12,708.90"
+    },
+    {
+      "field": "total",
+      "value": "83313.9",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹83,313.90"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Hex bolt M10 x 60 (box of 100)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Hex bolt M10 x 60 (box of 100)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "8960.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "8,960.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Wood screw 2 in (box of 500)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Wood screw 2 in (box of 500)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "6300.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6,300.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Cutting disc 4 in (pack of 25)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Cutting disc 4 in (pack of 25)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "9360.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "9,360.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Welding electrode 3.15mm (5 kg)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Welding electrode 3.15mm (5 kg)"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "12420.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "12,420.00"
+    },
+    {
+      "field": "line 5 description",
+      "value": "Angle grinder 850W",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Angle grinder 850W"
+    },
+    {
+      "field": "line 5 amount",
+      "value": "10350.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,350.00"
+    },
+    {
+      "field": "line 6 description",
+      "value": "Drill bit set HSS (13 pc)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Drill bit set HSS (13 pc)"
+    },
+    {
+      "field": "line 6 amount",
+      "value": "6720.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6,720.00"
+    },
+    {
+      "field": "line 7 description",
+      "value": "Safety gloves, leather (pair)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Safety gloves, leather (pair)"
+    },
+    {
+      "field": "line 7 amount",
+      "value": "3840.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "3,840.00"
+    },
+    {
+      "field": "line 8 description",
+      "value": "Spirit level 600mm",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Spirit level 600mm"
+    },
+    {
+      "field": "line 8 amount",
+      "value": "2050.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "2,050.00"
+    },
+    {
+      "field": "line 9 description",
+      "value": "Measuring tape 5m",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Measuring tape 5m"
+    },
+    {
+      "field": "line 9 amount",
+      "value": "2775.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "2,775.00"
+    },
+    {
+      "field": "line 10 description",
+      "value": "Anchor fastener M12 (box of 50)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Anchor fastener M12 (box of 50)"
+    },
+    {
+      "field": "line 10 amount",
+      "value": "7830.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "7,830.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2523,
+    "cached_input_tokens": 1563,
+    "output_tokens": 628,
+    "cost_usd": 0.0005819299999999999,
+    "cost_usd_no_prompt_cache": 0.0007226,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2523,
+        "output_tokens": 628,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_7cf40dfa562b4107bb18d9df63f74710",
+      "latency_s": 5.662,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.277,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

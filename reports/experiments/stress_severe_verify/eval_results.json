@@ -1,0 +1,2142 @@
+{
+  "generated_at": "2026-11-19T13:16:07+00:00",
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "prompt_version": "v1",
+    "numeric_tolerance": 0.01
+  },
+  "field_metrics": [
+    {
+      "field": "is_invoice",
+      "accuracy": 1.0,
+      "correct": 10,
+      "total": 10,
+      "exact_raw_match": 10
+    },
+    {
+      "field": "vendor",
+      "accuracy": 0.3,
+      "correct": 3,
+      "total": 10,
+      "exact_raw_match": 3,
+      "lenient_suffix_insensitive": 3
+    },
+    {
+      "field": "invoice_number",
+      "accuracy": 0.1,
+      "correct": 1,
+      "total": 10,
+      "exact_raw_match": 1
+    },
+    {
+      "field": "invoice_date",
+      "accuracy": 0.1,
+      "correct": 1,
+      "total": 10,
+      "exact_raw_match": 1
+    },
+    {
+      "field": "currency",
+      "accuracy": 0.4,
+      "correct": 4,
+      "total": 10,
+      "exact_raw_match": 4
+    },
+    {
+      "field": "line_items",
+      "accuracy": 0.1,
+      "correct": 1,
+      "total": 10,
+      "exact_raw_match": 1
+    },
+    {
+      "field": "tax_total",
+      "accuracy": 0.1,
+      "correct": 1,
+      "total": 10,
+      "exact_raw_match": 1
+    },
+    {
+      "field": "total",
+      "accuracy": 0.1,
+      "correct": 1,
+      "total": 10,
+      "exact_raw_match": 1
+    }
+  ],
+  "line_item_metrics": {
+    "documents_with_items_compared": 0,
+    "gt_items": 66,
+    "predicted_items": 0,
+    "exactly_matched_items": 0,
+    "item_precision": null,
+    "item_recall": 0.0,
+    "description_accuracy": 0.0,
+    "quantity_accuracy": 0.0,
+    "amount_accuracy": 0.0,
+    "documents_with_order_preserved": 0
+  },
+  "summary": {
+    "documents": 10,
+    "overall_field_accuracy": 0.275,
+    "overall_exact_raw_accuracy": 0.275,
+    "correct_fields": 22,
+    "total_fields": 80,
+    "exact_document_match_rate": 0.1,
+    "documents_with_at_least_one_error": 9,
+    "pipeline_failures": 0,
+    "validation_failures": 9,
+    "validation_failure_documents": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06",
+      "L07",
+      "L09",
+      "L10"
+    ],
+    "non_invoices_in_ground_truth": 1,
+    "non_invoices_correctly_classified": 1,
+    "invoices_misclassified_as_non_invoice": 0
+  },
+  "review_flag": {
+    "flagged": 9,
+    "flagged_with_errors": 9,
+    "flagged_without_errors": 0,
+    "unflagged_with_errors": 0,
+    "unflagged_without_errors": 1,
+    "precision": 1.0,
+    "recall": 1.0,
+    "field_errors_total": 58,
+    "field_errors_in_flagged_docs": 58,
+    "share_of_field_errors_caught": 1.0
+  },
+  "cost": {
+    "pricing_source": "https://developers.openai.com/api/docs/pricing",
+    "pricing_as_of": "2026-11-19",
+    "prices_usd_per_mtok": {
+      "gpt-6-luna": {
+        "input": 0.1,
+        "output": 0.5
+      }
+    },
+    "method": "cost = uncached input_tokens x input price + cached input tokens x cached-input price + output_tokens x output price, using the token counts reported by the provider API on each call (thinking tokens are included in output_tokens). Repair calls and retries that returned a response are included. Cached re-runs reuse the original call's recorded usage, so the figures are what a fresh extraction costs.",
+    "all": {
+      "documents": 10,
+      "documents_with_api_calls": 10,
+      "total_cost_usd": 0.004074,
+      "avg_cost_per_document_usd": 0.000407,
+      "avg_input_tokens": 5.7,
+      "avg_cached_input_tokens": 4295.1,
+      "avg_total_input_tokens": 4300.8,
+      "avg_output_tokens": 727.8,
+      "total_input_tokens": 57,
+      "total_output_tokens": 7278,
+      "total_api_calls": 19,
+      "total_repair_calls": 0,
+      "total_verify_calls": 9,
+      "total_transient_retries": 0,
+      "avg_api_latency_s": 12.89
+    },
+    "subset:labelled": {
+      "documents": 10,
+      "documents_with_api_calls": 10,
+      "total_cost_usd": 0.004074,
+      "avg_cost_per_document_usd": 0.000407,
+      "avg_input_tokens": 5.7,
+      "avg_cached_input_tokens": 4295.1,
+      "avg_total_input_tokens": 4300.8,
+      "avg_output_tokens": 727.8,
+      "total_input_tokens": 57,
+      "total_output_tokens": 7278,
+      "total_api_calls": 19,
+      "total_repair_calls": 0,
+      "total_verify_calls": 9,
+      "total_transient_retries": 0,
+      "avg_api_latency_s": 12.89
+    }
+  },
+  "documents": [
+    {
+      "document_id": "L01",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": true,
+          "exact": true,
+          "lenient": true,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": "Northwind Logistics Ltd",
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Northwind Logistics Ltd",
+        "invoice_number": "NWL-88213",
+        "invoice_date": "2026-04-08",
+        "currency": "GBP",
+        "line_items": [
+          {
+            "description": "Pallet freight, Manchester to Glasgow",
+            "quantity": 3,
+            "amount": 435.0
+          },
+          {
+            "description": "Fuel surcharge (flat rate)",
+            "quantity": 1,
+            "amount": 62.5
+          },
+          {
+            "description": "Warehousing, per pallet per week",
+            "quantity": 12,
+            "amount": 57.0
+          },
+          {
+            "description": "Proof-of-delivery admin fee",
+            "quantity": 3,
+            "amount": 15.0
+          }
+        ],
+        "tax_total": 113.9,
+        "total": 683.4
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "model reported 1 ambiguity note(s)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [
+          "The invoice details, item table, currency, and totals are too blurry to transcribe reliably."
+        ],
+        "illegible_fields": [
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 464,
+            "cache_read_input_tokens": 2181,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 330,
+          "stop_reason": "end_turn",
+          "request_id": "req_44a98c0c5d6e4b2ebfe07d68c6b6a6af",
+          "latency_s": 7.43,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 401,
+            "cache_read_input_tokens": 2181,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 286,
+          "stop_reason": "end_turn",
+          "request_id": "req_db173c76efd44f1ea41de8582730ff9d",
+          "latency_s": 5.98,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L02",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Shree Ganesh Stationers",
+        "invoice_number": "SGS/1847",
+        "invoice_date": "2026-08-19",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Exam pad A4 (200 pages)",
+            "quantity": 150,
+            "amount": 8700.0
+          },
+          {
+            "description": "Ball pen blue (box of 50)",
+            "quantity": 20,
+            "amount": 4800.0
+          },
+          {
+            "description": "Whiteboard duster",
+            "quantity": 10,
+            "amount": 350.0
+          },
+          {
+            "description": "Chart paper white (pack of 20)",
+            "quantity": 25,
+            "amount": 3000.0
+          },
+          {
+            "description": "Stapler pin No.10 (box)",
+            "quantity": 40,
+            "amount": 560.0
+          },
+          {
+            "description": "File folder, plastic",
+            "quantity": 100,
+            "amount": 2200.0
+          }
+        ],
+        "tax_total": 3529.8,
+        "total": 23139.8
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "model reported 1 ambiguity note(s)",
+        "image quality warnings: page 1: possible_90deg_rotation (row/col ratio=0.56)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [
+          "The page is too blurry to confidently read the invoice details or amounts."
+        ],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 322,
+            "cache_read_input_tokens": 2259,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 194,
+          "stop_reason": "end_turn",
+          "request_id": "req_4359dbf8f6174037884127b4190a5ead",
+          "latency_s": 5.474,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 326,
+            "cache_read_input_tokens": 2259,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 190,
+          "stop_reason": "end_turn",
+          "request_id": "req_5050720afd044987aefe51a2defcd287",
+          "latency_s": 5.691,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L03",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": "INR",
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Kaveri Office Mart Pvt Ltd",
+        "invoice_number": "KOM/26-27/00418",
+        "invoice_date": "2026-06-23",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "A4 copier paper 75 GSM (ream)",
+            "quantity": 40,
+            "amount": 11560.0
+          },
+          {
+            "description": "Whiteboard markers (box of 10)",
+            "quantity": 12,
+            "amount": 2580.0
+          },
+          {
+            "description": "Ergonomic mesh office chair",
+            "quantity": 6,
+            "amount": 38700.0
+          },
+          {
+            "description": "Heavy-duty stapler",
+            "quantity": 4,
+            "amount": 1540.0
+          }
+        ],
+        "tax_total": 9788.4,
+        "total": 64168.4
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "model reported 1 ambiguity note(s)",
+        "image quality warnings: page 1: low_contrast (std=19.9)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [
+          "The document is headed “TAX INVOICE,” but the low-contrast image does not permit reliable reading of the invoice details, item rows, or totals."
+        ],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 357,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 212,
+          "stop_reason": "end_turn",
+          "request_id": "req_482f0a435157415ea2b96546734bda5a",
+          "latency_s": 6.734,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 326,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 206,
+          "stop_reason": "end_turn",
+          "request_id": "req_4788c90e44774e2d92ee9dc9ce285ff3",
+          "latency_s": 5.778,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L04",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": "Meridiana Print & Pack LLP",
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": "INR",
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Meridian Print & Pack LLP",
+        "invoice_number": "MPP-2026-0207",
+        "invoice_date": "2026-02-17",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Corrugated box 12x9x6 in (3-ply)",
+            "quantity": 500,
+            "amount": 9250.0
+          },
+          {
+            "description": "Corrugated box 16x12x8 in (3-ply)",
+            "quantity": 400,
+            "amount": 10700.0
+          },
+          {
+            "description": "Corrugated box 20x16x12 in (5-ply)",
+            "quantity": 250,
+            "amount": 14500.0
+          },
+          {
+            "description": "Mailer box 10x8x3 in, kraft",
+            "quantity": 600,
+            "amount": 8520.0
+          },
+          {
+            "description": "Mailer box 12x10x4 in, white",
+            "quantity": 600,
+            "amount": 10740.0
+          },
+          {
+            "description": "Bubble wrap roll 1m x 100m",
+            "quantity": 30,
+            "amount": 35400.0
+          },
+          {
+            "description": "BOPP packing tape 48mm x 100m",
+            "quantity": 240,
+            "amount": 11040.0
+          },
+          {
+            "description": "BOPP packing tape 48mm x 50m, printed",
+            "quantity": 120,
+            "amount": 4740.0
+          },
+          {
+            "description": "Stretch film 500mm x 300m",
+            "quantity": 60,
+            "amount": 24600.0
+          },
+          {
+            "description": "Edge protector 50x50x3mm, 1m",
+            "quantity": 800,
+            "amount": 6240.0
+          },
+          {
+            "description": "Paper void fill roll 380mm x 300m",
+            "quantity": 24,
+            "amount": 16560.0
+          },
+          {
+            "description": "Foam sheet 2mm, 1m x 50m",
+            "quantity": 16,
+            "amount": 21200.0
+          },
+          {
+            "description": "Zip pouch 6x9 in (pack of 100)",
+            "quantity": 80,
+            "amount": 7360.0
+          },
+          {
+            "description": "Zip pouch 9x12 in (pack of 100)",
+            "quantity": 80,
+            "amount": 11040.0
+          },
+          {
+            "description": "Tamper-evident bag 12x15 in (pack of 100)",
+            "quantity": 50,
+            "amount": 10750.0
+          },
+          {
+            "description": "Thermal label roll 100x150mm",
+            "quantity": 90,
+            "amount": 15120.0
+          },
+          {
+            "description": "Barcode label A4 sheet (pack of 100)",
+            "quantity": 35,
+            "amount": 10850.0
+          },
+          {
+            "description": "Fragile sticker roll (500)",
+            "quantity": 40,
+            "amount": 5040.0
+          },
+          {
+            "description": "Corrugated divider set 12-cell",
+            "quantity": 300,
+            "amount": 6420.0
+          },
+          {
+            "description": "Carton sealing gun",
+            "quantity": 6,
+            "amount": 3840.0
+          },
+          {
+            "description": "Pallet wrap dispenser",
+            "quantity": 8,
+            "amount": 3880.0
+          },
+          {
+            "description": "Custom print setup charge",
+            "quantity": 1,
+            "amount": 4500.0
+          },
+          {
+            "description": "Die-cut tooling charge (one-time)",
+            "quantity": 1,
+            "amount": 9800.0
+          },
+          {
+            "description": "Freight, Pune to Nashik (part load)",
+            "quantity": 1,
+            "amount": 6200.0
+          }
+        ],
+        "tax_total": 32194.8,
+        "total": 300484.8
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: invoice_number, invoice_date, total, line_items",
+        "model reported illegible fields: invoice_number, invoice_date, line_items, printed_subtotal, tax_lines, tax_total, total"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [],
+        "illegible_fields": [
+          "invoice_number",
+          "invoice_date",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 388,
+            "cache_read_input_tokens": 2647,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 229,
+          "stop_reason": "end_turn",
+          "request_id": "req_02bde84e546d41f18e230abebdf84e24",
+          "latency_s": 8.212,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 391,
+            "cache_read_input_tokens": 2647,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 232,
+          "stop_reason": "end_turn",
+          "request_id": "req_c44a257eda7d4e2fba44ca55254255b6",
+          "latency_s": 5.397,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L05",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Orbit Hardware Supplies",
+        "invoice_number": "OHS-0261-26",
+        "invoice_date": "2026-01-27",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Hex bolt M10 x 60 (box of 100)",
+            "quantity": 14,
+            "amount": 8960.0
+          },
+          {
+            "description": "Wood screw 2 in (box of 500)",
+            "quantity": 20,
+            "amount": 6300.0
+          },
+          {
+            "description": "Cutting disc 4 in (pack of 25)",
+            "quantity": 12,
+            "amount": 9360.0
+          },
+          {
+            "description": "Welding electrode 3.15mm (5 kg)",
+            "quantity": 18,
+            "amount": 12420.0
+          },
+          {
+            "description": "Angle grinder 850W",
+            "quantity": 3,
+            "amount": 10350.0
+          },
+          {
+            "description": "Drill bit set HSS (13 pc)",
+            "quantity": 6,
+            "amount": 6720.0
+          },
+          {
+            "description": "Safety gloves, leather (pair)",
+            "quantity": 40,
+            "amount": 3840.0
+          },
+          {
+            "description": "Spirit level 600mm",
+            "quantity": 5,
+            "amount": 2050.0
+          },
+          {
+            "description": "Measuring tape 5m",
+            "quantity": 15,
+            "amount": 2775.0
+          },
+          {
+            "description": "Anchor fastener M12 (box of 50)",
+            "quantity": 9,
+            "amount": 7830.0
+          }
+        ],
+        "tax_total": 12708.9,
+        "total": 83313.9
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "model reported 1 ambiguity note(s)",
+        "image quality warnings: page 1: low_contrast (std=18.3)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [
+          "The page appears to be an invoice, but the low-contrast image does not allow the invoice details or amounts to be read confidently."
+        ],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 399,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 258,
+          "stop_reason": "end_turn",
+          "request_id": "req_659a0dd77ead45e3b4c7d74bde5afcbc",
+          "latency_s": 5.812,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 421,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 287,
+          "stop_reason": "end_turn",
+          "request_id": "req_d00a440a33544ab49561ee3e0e00a911",
+          "latency_s": 7.743,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L06",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": "INR",
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Anand & Rao Associates",
+        "invoice_number": "AR/2026/0093",
+        "invoice_date": "2026-05-30",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Monthly compliance retainer (May 2026)",
+            "quantity": null,
+            "amount": 45000.0
+          },
+          {
+            "description": "GST return filing (GSTR-1 and GSTR-3B)",
+            "quantity": 1,
+            "amount": 6500.0
+          },
+          {
+            "description": "TDS return preparation (quarterly)",
+            "quantity": 1,
+            "amount": 8000.0
+          },
+          {
+            "description": "Out-of-pocket expenses (reimbursable)",
+            "quantity": null,
+            "amount": 1240.0
+          }
+        ],
+        "tax_total": 10933.2,
+        "total": 71673.2
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "image quality warnings: page 1: low_contrast (std=19.9)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 443,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 330,
+          "stop_reason": "end_turn",
+          "request_id": "req_9cbffcd4d6564e9294f9b61bce8f1e66",
+          "latency_s": 7.039,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 343,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 214,
+          "stop_reason": "end_turn",
+          "request_id": "req_af45bbedfcc8458f8751d517188a6135",
+          "latency_s": 8.979,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L07",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Pixel Harbor Studio",
+        "invoice_number": "PHS-1042",
+        "invoice_date": "2026-03-14",
+        "currency": "USD",
+        "line_items": [
+          {
+            "description": "Brand identity package",
+            "quantity": 1,
+            "amount": 3200.0
+          },
+          {
+            "description": "Social media templates (set of 12)",
+            "quantity": 1,
+            "amount": 850.0
+          },
+          {
+            "description": "Additional revision rounds",
+            "quantity": 3,
+            "amount": 450.0
+          },
+          {
+            "description": "Returning client discount (10%)",
+            "quantity": null,
+            "amount": -450.0
+          }
+        ],
+        "tax_total": 334.13,
+        "total": 4384.13
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, total",
+        "image quality warnings: page 1: low_contrast (std=17.6)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 462,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 357,
+          "stop_reason": "end_turn",
+          "request_id": "req_1005414d474b42a1b640ba50d251b8e9",
+          "latency_s": 7.048,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 513,
+            "cache_read_input_tokens": 2218,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 377,
+          "stop_reason": "end_turn",
+          "request_id": "req_063b70bf41204b44bcb5d5072692dd95",
+          "latency_s": 9.385,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L08",
+      "status": "not_invoice",
+      "error": null,
+      "wrong_fields": [],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": true,
+          "exact": true,
+          "lenient": true,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": false,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": false,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "not_applicable",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [],
+        "passed": true
+      },
+      "needs_review": false,
+      "review_reasons": [],
+      "auxiliary_extraction": {
+        "document_type": "purchase_order",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [],
+        "illegible_fields": []
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 136,
+            "cache_read_input_tokens": 2181,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 52,
+          "stop_reason": "end_turn",
+          "request_id": "req_9e30d302c08f4aa2bf00388d9677c3ed",
+          "latency_s": 4.292,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L09",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "vendor",
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": false,
+          "exact": false,
+          "lenient": false,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": null,
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Coastal Fresh Seafoods",
+        "invoice_number": "CFS-4471",
+        "invoice_date": "2026-10-14",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "King fish (seer), cleaned, kg",
+            "quantity": 12.5,
+            "amount": 11500.0
+          },
+          {
+            "description": "Tiger prawns 16/20, kg",
+            "quantity": 18,
+            "amount": 14040.0
+          },
+          {
+            "description": "Pomfret, whole, kg",
+            "quantity": 9.5,
+            "amount": 6080.0
+          },
+          {
+            "description": "Squid, cleaned, kg",
+            "quantity": 7,
+            "amount": 2870.0
+          },
+          {
+            "description": "Crab (live), kg",
+            "quantity": 11,
+            "amount": 6160.0
+          }
+        ],
+        "tax_total": 2032.5,
+        "total": 42682.5
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: vendor, invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: vendor, invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [],
+        "illegible_fields": [
+          "vendor",
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 530,
+            "cache_read_input_tokens": 2213,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 364,
+          "stop_reason": "end_turn",
+          "request_id": "req_1e02a60542bb405ead56ea175b760575",
+          "latency_s": 7.141,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 446,
+            "cache_read_input_tokens": 2213,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 306,
+          "stop_reason": "end_turn",
+          "request_id": "req_e6c0c22353ce4f9997428707b5a62cdf",
+          "latency_s": 8.043,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    },
+    {
+      "document_id": "L10",
+      "status": "extracted",
+      "error": null,
+      "wrong_fields": [
+        "invoice_number",
+        "invoice_date",
+        "currency",
+        "line_items",
+        "tax_total",
+        "total"
+      ],
+      "fields": {
+        "is_invoice": {
+          "correct": true,
+          "exact": true,
+          "lenient": null,
+          "note": ""
+        },
+        "vendor": {
+          "correct": true,
+          "exact": true,
+          "lenient": true,
+          "note": ""
+        },
+        "invoice_number": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "invoice_date": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "currency": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "line_items": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "tax_total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        },
+        "total": {
+          "correct": false,
+          "exact": false,
+          "lenient": null,
+          "note": ""
+        }
+      },
+      "prediction": {
+        "is_invoice": true,
+        "vendor": "Metro Auto Parts",
+        "invoice_number": null,
+        "invoice_date": null,
+        "currency": null,
+        "line_items": null,
+        "tax_total": null,
+        "total": null
+      },
+      "ground_truth": {
+        "is_invoice": true,
+        "vendor": "Metro Auto Parts",
+        "invoice_number": "MAP/D/09-0312",
+        "invoice_date": "2026-09-03",
+        "currency": "INR",
+        "line_items": [
+          {
+            "description": "Brake pad set, front (sedan)",
+            "quantity": 8,
+            "amount": 14800.0
+          },
+          {
+            "description": "Air filter element",
+            "quantity": 12,
+            "amount": 5040.0
+          },
+          {
+            "description": "Wiper blade 20 in (pair)",
+            "quantity": 15,
+            "amount": 5700.0
+          },
+          {
+            "description": "Engine oil 5W-30, 4 L can",
+            "quantity": 20,
+            "amount": 39200.0
+          },
+          {
+            "description": "Coolant concentrate, 1 L",
+            "quantity": 18,
+            "amount": 5580.0
+          }
+        ],
+        "tax_total": 19689.6,
+        "total": 90009.6
+      },
+      "line_item_alignment": null,
+      "financial_check": {
+        "status": "insufficient_data",
+        "tolerance": 0.02,
+        "line_items_sum": null,
+        "tax_total": null,
+        "computed_total": null,
+        "printed_total": null,
+        "difference": null,
+        "adjustments_sum": null,
+        "subtotal_matches": null,
+        "tax_lines_match": null,
+        "row_mismatches": [],
+        "messages": [
+          "cannot reconcile totals: missing line_items, total"
+        ],
+        "passed": false
+      },
+      "needs_review": true,
+      "review_reasons": [
+        "missing critical fields: invoice_number, invoice_date, currency, total, line_items",
+        "model reported illegible fields: invoice_number, invoice_date, currency, line_items, printed_subtotal, tax_lines, tax_total, adjustments_outside_items, total",
+        "model reported 1 ambiguity note(s)"
+      ],
+      "auxiliary_extraction": {
+        "document_type": "invoice",
+        "printed_subtotal": null,
+        "tax_lines": null,
+        "adjustments_outside_items": null,
+        "unit_prices": null,
+        "ambiguities": [
+          "The image is too blurred to confidently read the invoice details or amounts."
+        ],
+        "illegible_fields": [
+          "invoice_number",
+          "invoice_date",
+          "currency",
+          "line_items",
+          "printed_subtotal",
+          "tax_lines",
+          "tax_total",
+          "adjustments_outside_items",
+          "total"
+        ]
+      },
+      "attempts": [
+        {
+          "kind": "initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 301,
+            "cache_read_input_tokens": 2213,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 173,
+          "stop_reason": "end_turn",
+          "request_id": "req_6eb58916a54f4bedb126af08d8e96809",
+          "latency_s": 5.759,
+          "transient_retries": 0,
+          "from_cache": false
+        },
+        {
+          "kind": "verify_initial",
+          "stage": "passed",
+          "problems": [],
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "usage": {
+            "input_tokens": 3,
+            "output_tokens": 309,
+            "cache_read_input_tokens": 2213,
+            "cache_creation_input_tokens": 0
+          },
+          "reasoning_tokens": 195,
+          "stop_reason": "end_turn",
+          "request_id": "req_6f626776072c44e5a3d8c7f835721256",
+          "latency_s": 6.927,
+          "transient_retries": 0,
+          "from_cache": false
+        }
+      ]
+    }
+  ]
+}

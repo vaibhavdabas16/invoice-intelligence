@@ -1,0 +1,251 @@
+{
+  "document_id": "L10",
+  "source_file": "L10.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 70320.0,
+    "tax_total": 19689.6,
+    "computed_total": 90009.6,
+    "printed_total": 90009.6,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 70320.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 14%",
+        "amount": 9844.8
+      },
+      {
+        "label": "SGST @ 14%",
+        "amount": 9844.8
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      1850.0,
+      420.0,
+      380.0,
+      1960.0,
+      310.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "ok"
+  },
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Metro Auto Parts",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_number",
+      "value": "MAP/D/09-0312",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-09-03",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "tax_total",
+      "value": "19689.6",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "total",
+      "value": "90009.6",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 description",
+      "value": "Brake pad set, front (sedan)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 1 amount",
+      "value": "14800.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 description",
+      "value": "Air filter element",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 2 amount",
+      "value": "5040.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 description",
+      "value": "Wiper blade 20 in (pair)",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 3 amount",
+      "value": "5700.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 description",
+      "value": "Engine oil 5W-30, 4 L can",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 4 amount",
+      "value": "39200.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 description",
+      "value": "Coolant concentrate, 1 L",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    },
+    {
+      "field": "line 5 amount",
+      "value": "5580.0",
+      "status": "not_checkable",
+      "page": null,
+      "source_text": null
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "scanned_pdf",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1158,
+        1568
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1158,
+        "height": 1568,
+        "contrast_std": 32.05,
+        "laplacian_std": 23.44,
+        "orientation_ratio": 3.547,
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 2,
+    "transient_retries": 0,
+    "input_tokens": 2207,
+    "cached_input_tokens": 5327,
+    "output_tokens": 696,
+    "cost_usd": 0.00062197,
+    "cost_usd_no_prompt_cache": 0.0011014000000000002,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2204,
+        "output_tokens": 339,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 77,
+      "stop_reason": "end_turn",
+      "request_id": "req_06c5d2cd90e547489d5935debd655000",
+      "latency_s": 4.781,
+      "transient_retries": 0,
+      "from_cache": true
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 357,
+        "cache_read_input_tokens": 3764,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 73,
+      "stop_reason": "end_turn",
+      "request_id": "req_a6763352f3814cf0845ef85cae262f7b",
+      "latency_s": 6.106,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.22,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

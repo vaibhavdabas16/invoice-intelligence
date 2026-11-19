@@ -1,0 +1,176 @@
+{
+  "document_id": "U02",
+  "source_file": "U02.jpg",
+  "status": "extracted",
+  "needs_review": true,
+  "review_reasons": [
+    "totals do not reconcile (difference +2.00)",
+    "line items do not sum to the printed subtotal",
+    "model reported 1 ambiguity note(s)",
+    "independent re-read of the scan disagrees: line 4 amount (96.0 vs 98.0)",
+    "first extraction failed automated checks and needed a repair call"
+  ],
+  "error": null,
+  "financial_check": {
+    "status": "mismatch",
+    "tolerance": 0.02,
+    "line_items_sum": 829.75,
+    "tax_total": 85.25,
+    "computed_total": 915.0,
+    "printed_total": 917.0,
+    "difference": 2.0,
+    "adjustments_sum": null,
+    "subtotal_matches": false,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "messages": [
+      "line items sum to 829.75 but the printed subtotal is 831.75",
+      "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+    ],
+    "passed": false
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 831.75,
+    "tax_lines": [
+      {
+        "label": "Sales Tax @ 10.25%",
+        "amount": 85.25
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      64.0,
+      38.5,
+      41.25,
+      9.6,
+      36.0
+    ],
+    "ambiguities": [
+      "The printed subtotal does not match the sum of the visible line amounts."
+    ],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [
+      "line 4 amount (96.0 vs 98.0)"
+    ],
+    "disagreement_kinds": [
+      "numeric"
+    ],
+    "resolved": false,
+    "resolution": "only the re-read is arithmetically consistent; values not swapped automatically",
+    "reread_financial_status": "ok"
+  },
+  "preprocessing": {
+    "source_kind": "image",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1136,
+        1568
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1050,
+        "height": 1449,
+        "contrast_std": 46.12,
+        "laplacian_std": 17.9,
+        "orientation_ratio": 0.878,
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 3,
+    "transient_retries": 0,
+    "input_tokens": 3133,
+    "cached_input_tokens": 8973,
+    "output_tokens": 2545,
+    "cost_usd": 0.00167553,
+    "cost_usd_no_prompt_cache": 0.0024831000000000002,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "financial_failed",
+      "problems": [
+        "line items sum to 829.75 but the printed subtotal is 831.75",
+        "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+      ],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2145,
+        "output_tokens": 919,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 506,
+      "stop_reason": "end_turn",
+      "request_id": "req_bfe800b8c5244900856d36f096832b23",
+      "latency_s": 12.193,
+      "transient_retries": 0,
+      "from_cache": false
+    },
+    {
+      "kind": "repair",
+      "stage": "financial_failed",
+      "problems": [
+        "line items sum to 829.75 but the printed subtotal is 831.75",
+        "line items (829.75) + tax (85.25) = 915.00, but the extracted total is 917.00 (difference +2.00, tolerance 0.02)"
+      ],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 985,
+        "output_tokens": 959,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 516,
+      "stop_reason": "end_turn",
+      "request_id": "req_a2e5f15970b340168c5c613ba51324c1",
+      "latency_s": 13.926,
+      "transient_retries": 0,
+      "from_cache": false
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 667,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 395,
+      "stop_reason": "end_turn",
+      "request_id": "req_c626bbba2e854916a8be93ba7f48a572",
+      "latency_s": 10.112,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 36.353,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "prompt_version": "v3"
+  }
+}

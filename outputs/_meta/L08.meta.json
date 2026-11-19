@@ -1,0 +1,97 @@
+{
+  "document_id": "L08",
+  "source_file": "L08.pdf",
+  "status": "not_invoice",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "not_applicable",
+    "tolerance": 0.02,
+    "line_items_sum": null,
+    "tax_total": null,
+    "computed_total": null,
+    "printed_total": null,
+    "difference": null,
+    "adjustments_sum": null,
+    "subtotal_matches": null,
+    "tax_lines_match": null,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "purchase_order",
+    "printed_subtotal": null,
+    "tax_lines": null,
+    "adjustments_outside_items": null,
+    "unit_prices": null,
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2432,
+    "cached_input_tokens": 1563,
+    "output_tokens": 82,
+    "cost_usd": 0.00029983000000000006,
+    "cost_usd_no_prompt_cache": 0.0004405,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2432,
+        "output_tokens": 82,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_336b74acbcf8498983e353b5ee141112",
+      "latency_s": 2.116,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.249,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

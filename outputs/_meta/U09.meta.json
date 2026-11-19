@@ -1,0 +1,199 @@
+{
+  "document_id": "U09",
+  "source_file": "U09.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 94380.0,
+    "tax_total": 4719.0,
+    "computed_total": 99099.0,
+    "printed_total": 99099.0,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 94380.0,
+    "tax_lines": [
+      {
+        "label": "GST @ 5%",
+        "amount": 4719.0
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      480.0,
+      18000.0,
+      85.0,
+      8580.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Greenleaf Catering Co",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Greenleaf Catering Co  |  GC/0204"
+    },
+    {
+      "field": "invoice_number",
+      "value": "GC/0204",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Greenleaf Catering Co  |  GC/0204"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-02-07",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date 07/02/2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "4719.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹4,719.00"
+    },
+    {
+      "field": "total",
+      "value": "99099.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹99,099.00"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Vegetarian buffet lunch, per head",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Vegetarian buffet lunch, per head"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "57600.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "57,600.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Live pasta counter (event)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Live pasta counter (event)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "18000.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "18,000.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Soft drinks and mocktails, per head",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Soft drinks and mocktails, per head"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "10200.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "10,200.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Service charge (10%)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Service charge (10%)"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "8580.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "8,580.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2357,
+    "cached_input_tokens": 1563,
+    "output_tokens": 204,
+    "cost_usd": 0.00035333000000000006,
+    "cost_usd_no_prompt_cache": 0.000494,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2357,
+        "output_tokens": 204,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_e56f245fb92a47999980372cb753b603",
+      "latency_s": 3.038,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 3.172,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

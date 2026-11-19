@@ -1,0 +1,198 @@
+{
+  "document_id": "U04",
+  "source_file": "U04.pdf",
+  "status": "extracted",
+  "needs_review": true,
+  "review_reasons": [
+    "quantity x unit price != amount on row(s) 1"
+  ],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 528.9,
+    "tax_total": 0.0,
+    "computed_total": 528.9,
+    "printed_total": 528.9,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [
+      0
+    ],
+    "tax_rate_mismatches": [],
+    "messages": [
+      "line item 1 ('Compute instances (instance-hours)'): quantity 1440.0 x unit price 0.09 = 129.60, but amount is 122.40"
+    ],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 528.9,
+    "tax_lines": [
+      {
+        "label": "Tax (reverse charge / not applicable)",
+        "amount": 0.0
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      0.09,
+      249.0,
+      23.0,
+      100.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Bluefin Cloud Services Inc.",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Bluefin Cloud Services Inc.  |  BF-2026-07-11874"
+    },
+    {
+      "field": "invoice_number",
+      "value": "BF-2026-07-11874",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Bluefin Cloud Services Inc.  |  BF-2026-07-11874"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-07-01",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Date 2026-07-01"
+    },
+    {
+      "field": "total",
+      "value": "528.9",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "$528.90"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Compute instances (instance-hours)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Compute instances (instance-hours)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "122.4",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "122.40"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Managed database, standard tier (month)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Managed database, standard tier (month)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "249.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "249.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Object storage (TB-month)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Object storage (TB-month)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "57.5",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "57.50"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Support plan, Business (month)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Support plan, Business (month)"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "100.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "100.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2355,
+    "cached_input_tokens": 1563,
+    "output_tokens": 324,
+    "cost_usd": 0.00041313,
+    "cost_usd_no_prompt_cache": 0.0005537999999999999,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2355,
+        "output_tokens": 324,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_62f71b71bbd84ef386a98ad5b31c002e",
+      "latency_s": 4.484,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 4.672,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

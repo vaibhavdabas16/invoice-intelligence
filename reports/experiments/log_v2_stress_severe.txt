@@ -1,0 +1,62 @@
+FIELD-LEVEL ACCURACY (normalised match; see README 'Matching rules')
+FIELD           ACCURACY      CORRECT    TOTAL    EXACT(raw)
+--------------  ----------  ---------  -------  ------------
+is_invoice      100.0%             10       10            10
+vendor          20.0%               2       10             2
+invoice_number  10.0%               1       10             1
+invoice_date    10.0%               1       10             1
+currency        50.0%               5       10             5
+line_items      10.0%               1       10             1
+tax_total       10.0%               1       10             1
+total           10.0%               1       10             1
+
+vendor, lenient (legal suffix ignored, e.g. 'Acme Pvt Ltd' == 'Acme'): 2/10 (informational, not the headline)
+
+LINE ITEMS (item-level, aligned one-to-one)
+------------------------------------  ----------
+GT items / predicted items            66 / 0
+exact item matches (desc+qty+amount)  0
+item precision / recall               n/a / 0.0%
+description accuracy                  0.0%
+quantity accuracy                     0.0%
+amount accuracy                       0.0%
+------------------------------------  ----------
+
+SUMMARY
+-----------------------------------  -----------------------------------------------------------------
+overall field accuracy               27.5% (22/80)
+overall exact (raw) accuracy         27.5%
+exact document match rate            10.0%
+documents with >= 1 field error      9/10
+validation failures (totals/schema)  9 ['L01', 'L02', 'L03', 'L04', 'L05', 'L06', 'L07', 'L09', 'L10']
+pipeline failures                    0
+non-invoices correctly classified    1/1
+-----------------------------------  -----------------------------------------------------------------
+
+PER DOCUMENT
+DOC    STATUS       FIELDS OK    WRONG FIELDS                                                                  TOTALS CHECK       REVIEW      CALLS
+-----  -----------  -----------  ----------------------------------------------------------------------------  -----------------  --------  -------
+L01    extracted    2/8          invoice_number, invoice_date, currency, line_items, tax_total, total          insufficient_data  yes             2
+L02    extracted    1/8          vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  insufficient_data  yes             2
+L03    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total            insufficient_data  yes             2
+L04    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total            insufficient_data  yes             2
+L05    extracted    1/8          vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  insufficient_data  yes             2
+L06    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total            insufficient_data  yes             2
+L07    extracted    1/8          vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  insufficient_data  yes             2
+L08    not_invoice  8/8          -                                                                             not_applicable     no              1
+L09    extracted    1/8          vendor, invoice_number, invoice_date, currency, line_items, tax_total, total  insufficient_data  yes             2
+L10    extracted    2/8          vendor, invoice_number, invoice_date, line_items, tax_total, total            insufficient_data  yes             2
+
+HUMAN-REVIEW FLAG vs ACTUAL ERRORS
+               has error    no error
+-----------  -----------  ----------
+flagged                9           0
+not flagged            0           1
+precision 100.0%, recall 100.0%, field errors inside flagged docs: 58/58
+
+COST (provider-reported tokens x published price)
+total $0.006206 | avg/doc $0.000621 (no-prompt-cache upper bound $0.001079) | avg tokens in (uncached+cached)/out 2090.8+5099/721 | API calls 19 (repairs 0, verify 9, retries 0)
+
+config: model=gpt-6-luna effort=low input_mode=hybrid prompt=v2 repair_attempts=1 verify_scans=True numeric_tolerance=0.01
+
+Detailed results written to D:\Downloads\cursor work\es\invoice-intelligence\reports\experiments\v2_stress_severe

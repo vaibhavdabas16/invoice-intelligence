@@ -1,0 +1,69 @@
+DATASET: EXPLORATION SET stress_mild (derived/synthetic; not the evaluation set, no generalisation claims)
+
+FIELD-LEVEL ACCURACY (normalised match; see README 'Matching rules')
+FIELD           ACCURACY      CORRECT    TOTAL    EXACT(raw)
+--------------  ----------  ---------  -------  ------------
+is_invoice      100.0%             10       10            10
+vendor          100.0%             10       10             7
+invoice_number  100.0%             10       10            10
+invoice_date    100.0%             10       10            10
+currency        100.0%             10       10            10
+line_items      90.0%               9       10             9
+tax_total       90.0%               9       10             9
+total           90.0%               9       10             9
+
+vendor, lenient (legal suffix ignored, e.g. 'Acme Pvt Ltd' == 'Acme'): 10/10 (informational, not the headline)
+
+LINE ITEMS (item-level, aligned one-to-one)
+------------------------------------  -------------
+GT items / predicted items            66 / 66
+exact item matches (desc+qty+amount)  65
+item precision / recall               98.5% / 98.5%
+description accuracy                  98.5%
+quantity accuracy                     100.0%
+amount accuracy                       100.0%
+------------------------------------  -------------
+
+SUMMARY
+-----------------------------------  -------------
+overall field accuracy               96.2% (77/80)
+overall exact (raw) accuracy         92.5%
+exact document match rate            80.0%
+documents with >= 1 field error      2/10
+validation failures (totals/schema)  1 ['L05']
+pipeline failures                    0
+non-invoices correctly classified    1/1
+-----------------------------------  -------------
+
+PER DOCUMENT
+DOC    STATUS       FIELDS OK    WRONG FIELDS      TOTALS CHECK    REVIEW      CALLS
+-----  -----------  -----------  ----------------  --------------  --------  -------
+L01    extracted    8/8          -                 ok              no              2
+L02    extracted    8/8          -                 ok              no              2
+L03    extracted    8/8          -                 ok              no              2
+L04    extracted    8/8          -                 ok              no              2
+L05    extracted    6/8          tax_total, total  mismatch        yes             3
+L06    extracted    8/8          -                 ok              no              2
+L07    extracted    8/8          -                 ok              no              2
+L08    not_invoice  8/8          -                 not_applicable  no              1
+L09    extracted    7/8          line_items        ok              no              2
+L10    extracted    8/8          -                 ok              no              2
+
+INVOICE CLASSIFICATION (rows = ground truth, columns = prediction)
+               pred invoice    pred non-invoice    pipeline failed
+-----------  --------------  ------------------  -----------------
+invoice                   9                   0                  0
+non_invoice               0                   1                  0
+invoice precision 100.0%, invoice recall 100.0%, non-invoice recall 100.0%
+
+HUMAN-REVIEW FLAG vs ACTUAL ERRORS
+               has error    no error
+-----------  -----------  ----------
+flagged                1           0
+not flagged            1           8
+precision 100.0%, recall 50.0%, field errors inside flagged docs: 2/3
+
+COST (provider-reported tokens x published price)
+total $0.004218 | avg/doc $0.000422 (no-prompt-cache upper bound $0.001083) | avg tokens in (uncached+cached)/out 6+7346/695.5 | API calls 20 (repairs 1, verify 9, retries 0)
+
+config: model=gpt-6-luna effort=none input_mode=hybrid prompt=v3 repair_attempts=1 verify_scans=True numeric_tolerance=0.01

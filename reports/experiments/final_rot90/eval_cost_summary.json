@@ -1,0 +1,49 @@
+{
+  "pricing_source": "https://developers.openai.com/api/docs/pricing",
+  "pricing_as_of": "2026-11-19",
+  "prices_usd_per_mtok": {
+    "gpt-6-luna": {
+      "input": 0.1,
+      "output": 0.5
+    }
+  },
+  "method": "cost = uncached input_tokens x input price + cached input tokens x cached-input price + output_tokens x output price, using the token counts reported by the provider API on each call (thinking tokens are included in output_tokens). Repair calls and retries that returned a response are included. Cached re-runs reuse the original call's recorded usage, so the figures are what a fresh extraction costs.",
+  "all": {
+    "documents": 10,
+    "documents_with_api_calls": 10,
+    "total_cost_usd": 0.006418,
+    "avg_cost_per_document_usd": 0.000642,
+    "total_cost_usd_no_prompt_cache": 0.0126,
+    "avg_cost_per_document_usd_no_prompt_cache": 0.00126,
+    "avg_input_tokens": 5.7,
+    "avg_cached_input_tokens": 6869.1,
+    "avg_total_input_tokens": 6874.8,
+    "avg_output_tokens": 1145.1,
+    "total_input_tokens": 57,
+    "total_output_tokens": 11451,
+    "total_api_calls": 19,
+    "total_repair_calls": 0,
+    "total_verify_calls": 9,
+    "total_transient_retries": 0,
+    "avg_api_latency_s": 18.55
+  },
+  "subset:labelled": {
+    "documents": 10,
+    "documents_with_api_calls": 10,
+    "total_cost_usd": 0.006418,
+    "avg_cost_per_document_usd": 0.000642,
+    "total_cost_usd_no_prompt_cache": 0.0126,
+    "avg_cost_per_document_usd_no_prompt_cache": 0.00126,
+    "avg_input_tokens": 5.7,
+    "avg_cached_input_tokens": 6869.1,
+    "avg_total_input_tokens": 6874.8,
+    "avg_output_tokens": 1145.1,
+    "total_input_tokens": 57,
+    "total_output_tokens": 11451,
+    "total_api_calls": 19,
+    "total_repair_calls": 0,
+    "total_verify_calls": 9,
+    "total_transient_retries": 0,
+    "avg_api_latency_s": 18.55
+  }
+}

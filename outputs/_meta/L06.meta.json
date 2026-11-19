@@ -1,0 +1,199 @@
+{
+  "document_id": "L06",
+  "source_file": "L06.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 60740.0,
+    "tax_total": 10933.2,
+    "computed_total": 71673.2,
+    "printed_total": 71673.2,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 60740.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 18%",
+        "amount": 10933.2
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      45000.0,
+      6500.0,
+      8000.0,
+      1240.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Anand & Rao Associates",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Anand & Rao Associates  |  AR/2026/0093"
+    },
+    {
+      "field": "invoice_number",
+      "value": "AR/2026/0093",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Anand & Rao Associates  |  AR/2026/0093"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-05-30",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "30-05-2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "10933.2",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹10,933.20"
+    },
+    {
+      "field": "total",
+      "value": "71673.2",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "₹71,673.20"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Monthly compliance retainer (May 2026)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Monthly compliance retainer (May 2026)"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "45000.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "45,000.00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "GST return filing (GSTR-1 and GSTR-3B)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "GST return filing (GSTR-1 and GSTR-3B)"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "6500.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "6,500.00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "TDS return preparation (quarterly)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "TDS return preparation (quarterly)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "8000.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "8,000.00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Out-of-pocket expenses (reimbursable)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Out-of-pocket expenses (reimbursable)"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "1240.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "1,240.00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2431,
+    "cached_input_tokens": 1563,
+    "output_tokens": 384,
+    "cost_usd": 0.00045073000000000004,
+    "cost_usd_no_prompt_cache": 0.0005914000000000001,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2431,
+        "output_tokens": 384,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 24,
+      "stop_reason": "end_turn",
+      "request_id": "req_52becf84262148adb66713eaa3143552",
+      "latency_s": 5.135,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.349,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "document_id": "U08",
+  "source_file": "U08.pdf",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 1029.0,
+    "tax_total": 107.25,
+    "computed_total": 1136.25,
+    "printed_total": 1136.25,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "tax_rate_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 1029.0,
+    "tax_lines": [
+      {
+        "label": "VAT @ 9%",
+        "amount": 81.63
+      },
+      {
+        "label": "VAT @ 21%",
+        "amount": 25.62
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      42.5,
+      18.9,
+      7.25,
+      35.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": null,
+  "evidence": [
+    {
+      "field": "vendor",
+      "value": "Sakura Tea Traders B.V.",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Sakura Tea Traders B.V.  |  2026/0314"
+    },
+    {
+      "field": "invoice_number",
+      "value": "2026/0314",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Sakura Tea Traders B.V.  |  2026/0314"
+    },
+    {
+      "field": "invoice_date",
+      "value": "2026-03-14",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "14-03-2026"
+    },
+    {
+      "field": "tax_total",
+      "value": "107.25",
+      "status": "derived",
+      "page": 1,
+      "source_text": "€ 81,63 + € 25,62"
+    },
+    {
+      "field": "total",
+      "value": "1136.25",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "€ 1.136,25"
+    },
+    {
+      "field": "line 1 description",
+      "value": "Sencha Premium, 1 kg bag",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Sencha Premium, 1 kg bag"
+    },
+    {
+      "field": "line 1 amount",
+      "value": "340.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "340,00"
+    },
+    {
+      "field": "line 2 description",
+      "value": "Matcha ceremonial grade, 100 g tin",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Matcha ceremonial grade, 100 g tin"
+    },
+    {
+      "field": "line 2 amount",
+      "value": "567.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "567,00"
+    },
+    {
+      "field": "line 3 description",
+      "value": "Bamboo whisk (chasen)",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Bamboo whisk (chasen)"
+    },
+    {
+      "field": "line 3 amount",
+      "value": "87.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "87,00"
+    },
+    {
+      "field": "line 4 description",
+      "value": "Shipping and handling",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "Shipping and handling"
+    },
+    {
+      "field": "line 4 amount",
+      "value": "35.0",
+      "status": "grounded",
+      "page": 1,
+      "source_text": "35,00"
+    }
+  ],
+  "token_confidence": null,
+  "preprocessing": {
+    "source_kind": "digital_pdf",
+    "page_count": 1,
+    "has_text_layer": true,
+    "image_sizes": [
+      [
+        1109,
+        1568
+      ]
+    ],
+    "quality": [
+      null
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 1,
+    "transient_retries": 0,
+    "input_tokens": 2358,
+    "cached_input_tokens": 1563,
+    "output_tokens": 225,
+    "cost_usd": 0.00036393,
+    "cost_usd_no_prompt_cache": 0.0005046,
+    "served_from_cache": false
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2358,
+        "output_tokens": 225,
+        "cache_read_input_tokens": 1563,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_e89b5bf4fab94a2c8d204b83dce891a1",
+      "latency_s": 3.38,
+      "transient_retries": 0,
+      "from_cache": false
+    }
+  ],
+  "duration_s": 3.541,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "token_confidence": false,
+    "confidence_threshold": 0.5,
+    "prompt_version": "v3"
+  }
+}

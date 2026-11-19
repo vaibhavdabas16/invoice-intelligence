@@ -1,0 +1,141 @@
+{
+  "document_id": "L02",
+  "source_file": "L02.jpg",
+  "status": "extracted",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "financial_check": {
+    "status": "ok",
+    "tolerance": 0.02,
+    "line_items_sum": 19610.0,
+    "tax_total": 3529.8,
+    "computed_total": 23139.8,
+    "printed_total": 23139.8,
+    "difference": 0.0,
+    "adjustments_sum": null,
+    "subtotal_matches": true,
+    "tax_lines_match": true,
+    "row_mismatches": [],
+    "messages": [],
+    "passed": true
+  },
+  "auxiliary_extraction": {
+    "document_type": "invoice",
+    "printed_subtotal": 19610.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 9%",
+        "amount": 1764.9
+      },
+      {
+        "label": "SGST @ 9%",
+        "amount": 1764.9
+      }
+    ],
+    "adjustments_outside_items": [],
+    "unit_prices": [
+      58.0,
+      240.0,
+      35.0,
+      120.0,
+      14.0,
+      22.0
+    ],
+    "ambiguities": [],
+    "illegible_fields": []
+  },
+  "consistency_check": {
+    "checked": true,
+    "disagreements": [],
+    "disagreement_kinds": [],
+    "resolved": true,
+    "resolution": "reads agree",
+    "reread_financial_status": "ok"
+  },
+  "preprocessing": {
+    "source_kind": "image",
+    "page_count": 1,
+    "has_text_layer": false,
+    "image_sizes": [
+      [
+        1136,
+        1568
+      ]
+    ],
+    "quality": [
+      {
+        "width": 1500,
+        "height": 2070,
+        "contrast_std": 59.11,
+        "laplacian_std": 23.47,
+        "orientation_ratio": 8.543,
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "usage": {
+    "api_calls": 2,
+    "transient_retries": 0,
+    "input_tokens": 6,
+    "cached_input_tokens": 7410,
+    "output_tokens": 792,
+    "cost_usd": 0.00047070000000000006,
+    "cost_usd_no_prompt_cache": 0.0011376,
+    "served_from_cache": true
+  },
+  "attempts": [
+    {
+      "kind": "initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 489,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 35,
+      "stop_reason": "end_turn",
+      "request_id": "req_7ad570a669e144c2bfccab62a8478c69",
+      "latency_s": 8.414,
+      "transient_retries": 0,
+      "from_cache": true
+    },
+    {
+      "kind": "verify_initial",
+      "stage": "passed",
+      "problems": [],
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 303,
+        "cache_read_input_tokens": 3705,
+        "cache_creation_input_tokens": 0
+      },
+      "reasoning_tokens": 0,
+      "stop_reason": "end_turn",
+      "request_id": "req_b77ddec5e4664248a3e85dee4b99b44a",
+      "latency_s": 3.788,
+      "transient_retries": 0,
+      "from_cache": true
+    }
+  ],
+  "duration_s": 0.18,
+  "config": {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "input_mode": "hybrid",
+    "max_image_edge_px": 1568,
+    "amount_tolerance": 0.02,
+    "max_repair_attempts": 1,
+    "verify_scans": true,
+    "upscale_images": true,
+    "prompt_version": "v3"
+  }
+}
